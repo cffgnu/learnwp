@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html lang="en-US" class="ie9 loading-site no-js"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en-US" class="ie8 loading-site no-js"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en-US" class="loading-site no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="xmlrpc.php" />
+
+	      
+    
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<!--[if IE]>
+	<meta http-equiv="x-ua-compatible" content="IE=Edge" />
+<![endif]-->
+<meta itemprop="image" content="wp-content/uploads/2022/07/learn-wordpress.jpg"> 
+<meta name="description" content="This post is part 2 of 3 in the Using HocVPS . seriesHocVPS does not integrate the Let's Encrypt certificate installation feature. So you install it manua">
+<meta itemprop="description" content="This post is part 2 of 3 in the Using HocVPS . seriesHocVPS does not integrate the Let's Encrypt certificate installation feature. So you install it manua">
+<meta name="author" content="This post is part 2 of 3 in the Using HocVPS . seriesHocVPS does not integrate the Let's Encrypt certificate installation feature. So you install it manua">
+<meta property="og:description" content="This post is part 2 of 3 in the Using HocVPS . seriesHocVPS does not integrate the Let's Encrypt certificate installation feature. So you install it manua">
+
+<meta name="language" content="en_US"/>
+	<meta property="og:determiner" content="">
+<meta property="article:modified_time" content="2022-07-01T18:54:13+00:00" />
+<meta name="subject" content="How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS"/>
+<meta name="pinterest-rich-pin" content="true" />
+
+<meta name="twitter:site" content="@hoangweb" />
+<meta name="twitter:image" content="wp-content/uploads/2022/07/learn-wordpress.jpg" />
+<meta name="twitter:creator" content="learn-wordpress.tk" />
+<meta name="twitter:url" content="/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps?to_html=1663468706.end">
+	
+<meta name="twitter:image:src" content="wp-content/uploads/2022/07/learn-wordpress.jpg">
+<meta name="twitter:image:alt" content="Learn Everything in WordPress" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>How to simply install Let&#039;s Encrypt certificate on VPS using HocVPS</title>
+	<link rel="canonical" href="how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="How to simply install Let&#039;s Encrypt certificate on VPS using HocVPS" />
+	<meta property="og:description" content="This post is part 2 of 3 in the Using HocVPS . series HocVPS does not integrate the Let&#8217;s Encrypt certificate installation feature. So you install it manually like this guide on hocvps . But that tutorial is quite complicated. In this article, I will show you how to install Let&#8217;s Encrypt SSL certificate using..." />
+	<meta property="og:url" content="/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" />
+	<meta property="og:site_name" content="Learn Everything in WordPress" />
+	<meta property="article:published_time" content="2022-07-01T18:54:13+00:00" />
+	<meta property="og:image" content="wp-content/uploads/2022/07/learn-wordpress.jpg" />
+	<meta property="og:image:width" content="400" />
+	<meta property="og:image:height" content="277" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="admin" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="8 minutes" />
+	
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//learn-wordpress.tk' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//netdna-cdn.com' />
+<link rel='dns-prefetch' href='//bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//kxcdn.com' />
+<link rel='dns-prefetch' href='//cloudfront.net' />
+<link rel="alternate" type="application/rss+xml" title="Learn Everything in WordPress &raquo; Feed" href="feed/" />
+<link rel="alternate" type="application/rss+xml" title="Learn Everything in WordPress &raquo; Comments Feed" href="comments/feed/" />
+<meta name="keywords" content="simple use Let's Encrypt, letsencrypt, letsencrypt github, install certbot ubuntu, certbot windows, pip install certbot, certbot github, dùng đơn giản Let's Encrypt"/>
+<meta name="news_keywords" content="simple use Let's Encrypt, letsencrypt, letsencrypt github, install certbot ubuntu, certbot windows, pip install certbot, certbot github, dùng đơn giản Let's Encrypt"/>
+
+<base href="https://kthoangweb.github.io/learnwp/" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="audience" content="General" />
+<meta name="resource-type" content="Document">
+<meta name="distribution" content="Global">
+<meta name="CODE AUTHOR" content="learn-wordpress.tk">
+<meta name="GENERATOR" content="Learn Everything in WordPress">
+<meta name="copyright" content="Learn Everything in WordPress">
+<meta name="author" content="Learn Everything in WordPress">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="1 days">
+<meta name="rating" content="general">
+<meta name="abstract" content="">
+<meta itemprop="url" href="how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps?to_html=1663468706.end">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="preconnect" href="//cdn.learn-wordpress.tk/"/>
+<link rel="dns-prefetch" href="//cdn.learn-wordpress.tk/"/>
+<link rel="dns-prefetch" href="//s.w.org"/>
+<link rel="dns-prefetch" href="//s3.amazonaws.com">
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="//ajax.microsoft.com">
+<link rel="dns-prefetch" href="//ajax.aspnetcdn.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//netdna.bootstrapcdn.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//apis.google.com">
+<link rel="dns-prefetch" href="//platform.linkedin.com">
+<link rel="dns-prefetch" href="//platform.twitter.com">
+<link rel="alternate" type="application/rss+xml" title="Learn Everything in WordPress &raquo; How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS Comments Feed" href="how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html/feed/" />
+<style id="critical-css" name="single-post-fc22841fcde4f05a1322d00c8162f96c">ul{box-sizing:border-box;}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px;}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important;}div.wpcf7{margin:0;padding:0;}div.wpcf7 .screen-reader-response{position:absolute;overflow:hidden;clip:rect(1px,1px,1px,1px);height:1px;width:1px;margin:0;padding:0;border:0;}div.wpcf7-response-output{margin:2em .5em 1em;padding:.2em 1em;border:2px solid red;}.wpcf7-form-control-wrap{position:relative;}.wpcf7-display-none{display:none;}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.pull-left{float:left;}.fa-clock-o:before{content:"\f017";}.fa-eye:before{content:"\f06e";}.fa-folder:before{content:"\f07b";}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}article,aside,header,main{display:block;}a{background-color:transparent;}img{border-style:none;}button,input,textarea{font:inherit;}button,input{overflow:visible;}button{text-transform:none;}[type=submit],button{-webkit-appearance:button;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}button:-moz-focusring,input:-moz-focusring{outline:1px dotted ButtonText;}textarea{overflow:auto;}[type=search]{-webkit-appearance:textfield;}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none;}*,:after,:before{box-sizing:border-box;}html {box-sizing:border-box;background-attachment:fixed;}body {color:#777;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}img {max-width:100%;height:auto;display:inline-block;vertical-align:middle;}p:empty{display:none;}a,button,input{-ms-touch-action:manipulation;touch-action:manipulation;}.col{position:relative;margin:0;padding:0 15px 30px;width:100%;}.col-inner{position:relative;margin-left:auto;margin-right:auto;width:100%;background-position:50% 50%;background-size:cover;background-repeat:no-repeat;-ms-flex:1 0 auto;flex:1 0 auto;}@media screen and (min-width:850px){.col:first-child .col-inner{margin-left:auto;margin-right:0;}.col+.col .col-inner{margin-right:auto;margin-left:0;}}@media screen and (max-width:849px){.col{padding-bottom:30px;}}@media screen and (min-width:850px) {.row-divided>.col+.col:not(.large-12){border-left:1px solid #ececec;}}.small-12{max-width:100%;-ms-flex-preferred-size:100%;flex-basis:100%;}.small-columns-1>.col{max-width:100%;-ms-flex-preferred-size:100%;flex-basis:100%;}@media screen and (min-width:550px){.medium-columns-1>.col{max-width:100%;-ms-flex-preferred-size:100%;flex-basis:100%;}}@media screen and (min-width:850px)  {.large-4{max-width:33.33333%;-ms-flex-preferred-size:33.33333%;flex-basis:33.33333%;}.large-8{max-width:66.66667%;-ms-flex-preferred-size:66.66667%;flex-basis:66.66667%;}.large-12{max-width:100%;-ms-flex-preferred-size:100%;flex-basis:100%;}.large-columns-1>.col{max-width:100%;-ms-flex-preferred-size:100%;flex-basis:100%;}}.container,.row,body{width:100%;margin-left:auto;margin-right:auto;}.container{padding-left:15px;padding-right:15px;}.container,.row{max-width:1080px;}.row.row-large{max-width:1110px;}.flex-row{-js-display:flex;display:-ms-flexbox;display :flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;width:100%;}.header .flex-row{height:100%;}.flex-col{max-height:100%;}.flex-grow{-ms-flex:1;flex:1;-ms-flex-negative:1;-ms-flex-preferred-size:auto!important;}.flex-center{margin:0 auto;}.flex-left{margin-right:auto;}.flex-right{margin-left:auto;}@media all and (-ms-high-contrast:none){.nav>li>a>i{top:-1px;}}.row{width:100%;-js-display:flex;display:-ms-flexbox;display :flex;-ms-flex-flow:row wrap;flex-flow:row wrap;}.row .row:not(.row-collapse){padding-left:0;padding-right:0;margin-left:-15px;margin-right:-15px;width:auto;}.row .row-xsmall:not(.row-collapse){margin-left:-2px;margin-right:-2px;margin-bottom:0;}.row-xsmall>.col{padding:0 2px 3px;margin-bottom:0;}@media screen and (min-width:850px)   {.row-large{padding-left:0;padding-right:0;}.row-large>.col{padding:0 30px 30px;margin-bottom:0;}}.nav{margin:0;padding:0;width:100%;position:relative;display:inline-block;display :-ms-flexbox;display  :flex;-ms-flex-flow:row wrap;flex-flow:row wrap;-ms-flex-align:center;align-items:center;}.nav>li{display:inline-block;list-style:none;margin:0;padding:0;position:relative;margin :0 7px;}.nav>li>a{padding:10px 0;display:inline-block;display :-ms-inline-flexbox;display  :inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;}.nav.nav-small>li>a{vertical-align:top;padding-top:5px;padding-bottom:5px;font-weight:400;}.nav-center{-ms-flex-pack:center;justify-content:center;}.nav-left{-ms-flex-pack:start;justify-content:flex-start;}.nav-right{-ms-flex-pack:end;justify-content:flex-end;}@media (max-width:849px){.medium-nav-center{-ms-flex-pack:center;justify-content:center;}}.nav>li>a{color:rgba(102,102,102,.85);}.nav>li.active>a{color:rgba(17,17,17,.85);}.nav li:first-child{margin-left:0!important;}.nav li:last-child{margin-right:0!important;}.nav-uppercase>li>a{letter-spacing:.02em;text-transform:uppercase;font-weight:bolder;}@media (min-width:850px){.nav-divided>li{margin:0 .7em;}.nav-divided>li+li>a:after{content:"";position:absolute;top:50%;width:1px;border-left:1px solid rgba(0,0,0,.1);height:15px;margin-top:-7px;left:-1em;}}li.html form,li.html input{margin:0;}.tabbed-content{display:-ms-flexbox;display :flex;-ms-flex-flow:row wrap;flex-flow:row wrap;}.tabbed-content .nav,.tabbed-content .tab-panels{width:100%;}.tab-panels{padding-top:1em;}.tab-panels .entry-content{padding:0;}.tab-panels .panel.active{display:block!important;}.nav.nav-vertical{-ms-flex-flow:column;flex-flow:column;}.nav.nav-vertical li{list-style:none;margin:0;width:100%;}.nav-vertical>li{display:-ms-flexbox;display :flex;-ms-flex-flow:row wrap;flex-flow:row wrap;-ms-flex-align:center;align-items:center;}.nav-vertical>li>a{display:block;width:auto;-ms-flex-positive:1;flex-grow:1;}.badge{display:table;z-index:20;height:2.8em;width:2.8em;-webkit-backface-visibility:hidden;backface-visibility:hidden;}.badge.top{left:0;}.badge-inner{display:table-cell;vertical-align:middle;text-align:center;width:100%;height:100%;background-color:#446084;line-height:.85;color:#fff;font-weight:bolder;padding:2px;white-space:nowrap;}.badge-outline .badge-inner{color:#446084;background-color:#fff;border:2px solid currentColor;}.badge-outline{margin-left:-.4em;}.box{width:100%;position:relative;margin:0 auto;}.box-text{padding-top:.7em;padding-bottom:1.4em;position:relative;width:100%;font-size:.9em;}@media (max-width:549px){.box-text{font-size:85%;}}.box-image{position:relative;height:auto;margin:0 auto;overflow:hidden;-webkit-mask-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);}.box-image img{max-width:100%;width:100%;transform:translateZ(0);margin:0 auto;}@media screen and (max-width:549px){.box-vertical .box-image{width:100%!important;}}@media screen and (min-width:550px) {.box-vertical{display:table;width:100%;}.box-vertical .box-image,.box-vertical .box-text{direction:ltr;display:table-cell;vertical-align:middle;}.box-vertical .box-text{padding-left:1.5em;padding-right:1.5em;}.box-vertical .box-image{width:50%;}}.button,button,input[type=submit]{position:relative;display:inline-block;background-color:transparent;text-transform:uppercase;font-size:.97em;letter-spacing:.03em;-ms-touch-action:none;touch-action:none;font-weight:bolder;text-align:center;color:currentColor;text-decoration:none;border:1px solid transparent;vertical-align:middle;border-radius:0;margin-top:0;margin-right:1em;text-shadow:none;line-height:2.4em;min-height:2.5em;padding:0 1.2em;max-width:100%;text-rendering:optimizeLegibility;box-sizing:border-box;}.button.is-outline{line-height:2.19em;}.button,input[type=submit]{color:#fff;background-color:#446084;background-color :var(--primary-color);border-color:rgba(0,0,0,.05);}.button.is-outline {border:2px solid currentColor;background-color:transparent;}.is-outline{color:silver;}input[type=submit]{background-color:#446084;}.secondary{background-color:#d26e4b;}.text-center .button:first-of-type{margin-left:0!important;}.flex-col .button,.flex-col button,.flex-col input{margin-bottom:0;}.is-divider{height:3px;display:block;background-color:rgba(0,0,0,.1);margin:1em 0;width:100%;max-width:30px;}.widget .is-divider{margin-top:.66em;}.dark .is-divider{background-color:rgba(255,255,255,.3);}form{margin-bottom:0;}input[type=search],input[type=text],textarea{box-sizing:border-box;border:1px solid #ddd;padding:0 .75em;height:2.507em;font-size:.97em;border-radius:0;max-width:100%;width:100%;vertical-align:middle;background-color:#fff;color:#333;box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-webkit-appearance:none;-moz-appearance:none;appearance:none;}textarea{padding-top:.7em;min-height:120px;}label{font-weight:700;display:block;font-size:.9em;margin-bottom:.4em;}.form-flat input:not([type=submit]){background-color:rgba(0,0,0,.03);box-shadow:none;border-color:rgba(0,0,0,.09);color:currentColor!important;border-radius:99px;}.form-flat button,.form-flat input{border-radius:99px;}.form-flat .flex-row .flex-col{padding-right:4px;}.form-flat .button.icon{color:currentColor!important;border-color:transparent!important;background-color:transparent!important;box-shadow:none;}i[class^=icon-]{font-family:fl-icons!important;font-display:block;speak:none!important;margin:0;padding:0;display:inline-block;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;position:relative;line-height:1.2;}.button i,button i{vertical-align:middle;top:-1.5px;}.button.icon{margin-left:.12em;margin-right:.12em;min-width:2.5em;padding-left:.6em;padding-right:.6em;display:inline-block;}.button.icon i{font-size:1.2em;}.button.icon.circle{padding-left:0;padding-right:0;}.button.icon.circle>i{margin:0 8px;}.button.icon.circle>i:only-child{margin:0;}.nav>li>a>i{vertical-align:middle;font-size:20px;}.nav>li>a>i.icon-menu{font-size:1.9em;}.nav>li.has-icon>a>i{min-width:1em;}img{opacity:1;}.col-inner>.img:not(:last-child){margin-bottom:1em;}.img{position:relative;}.img .img-inner{position:relative;overflow:hidden;}.img,.img img{width:100%;}.lazy-load{background-color:rgba(0,0,0,.03);}.image-cover{position:relative;height:auto;overflow:hidden;padding-top:100%;background-position:50% 50%;background-size:cover;}.image-cover img{right:0;width:100%;height:100%;bottom:0;left:0;top:0;position:absolute;object-position:50% 50%;object-fit:cover;font-family:'object-fit: cover;';}.mfp-hide{display:none!important;}label {color:#222;}a{color:#334862;text-decoration:none;}a.plain{color:currentColor;}ul{list-style:disc;margin-top:0;padding:0;}li{margin-bottom:.6em;}.col-inner ul li{margin-left:1.3em;}.col-inner ul li.tab{margin-left:0;}.button,button,input,textarea{margin-bottom:1em;}form,p,ul{margin-bottom:1.3em;}form p{margin-bottom:.5em;}body{line-height:1.6;}h1,h3,h5,h6{color:#555;width:100%;margin-top:0;margin-bottom:.5em;text-rendering:optimizeSpeed;}h1{font-size:1.7em;line-height:1.3;}h3{font-size:1.25em;}h5{font-size:1em;}h6{font-size:.85em;opacity:.8;}@media (max-width:549px) {h1{font-size:1.4em;}h3{font-size:1em;}}h6 span{font-weight:400;font-weight :500;}p{margin-top:0;}h6>span{-webkit-box-decoration-break:clone;box-decoration-break:clone;}.uppercase,h6{line-height:1.05;letter-spacing:.05em;text-transform:uppercase;}.is-normal{font-weight:400;}.uppercase{line-height:1.2;text-transform:uppercase;}.is-large{font-size:1.15em;}.is-small{font-size:.8em;}.is-xsmall{font-size:.7em;}.is-xxsmall{font-size:.6em;}@media (max-width:549px)  {.is-large{font-size:1em;}}.box-text h5{line-height:1.3;margin-top:.1em;margin-bottom:.1em;}.box-text p{margin-top:.1em;margin-bottom:.1em;}.nav>li>a{font-size:.8em;}.nav>li.html{font-size:.85em;}.nav-size-small>li>a{font-size:.7em;}.nav-spacing-xlarge>li{margin:0 13px;}.clear:after,.clearfix:after,.container:after,.row:after{content:"";display:table;clear:both;}@media (max-width:549px)   {.small-text-center{text-align:center!important;width:100%!important;float:none!important;}}@media (min-width:850px) {.show-for-medium{display:none!important;}}@media (max-width:849px) {.hide-for-medium{display:none!important;}.medium-text-center .pull-left{float:none;}.medium-text-center{text-align:center!important;width:100%!important;float:none!important;}}.pull-left{float:left;margin-left:0!important;}.mb-0{margin-bottom:0!important;}.text-left{text-align:left;}.text-center .is-divider,.text-center>div,.text-center>div>div{margin-left:auto;margin-right:auto;}.relative{position:relative!important;}.absolute{position:absolute!important;}.fixed{position:fixed!important;z-index:12;}.top{top:0;}.bottom{bottom:0;}.fill{position:absolute;top:0;left:0;height:100%;right:0;bottom:0;padding:0!important;margin:0!important;}.pull-left {float:left;}.circle{border-radius:999px!important;object-fit:cover;}.z-1{z-index:21;}.z-top{z-index:9995;}.op-7{opacity:.7;}.op-8{opacity:.8;}.no-scrollbar{-ms-overflow-style:-ms-autohiding-scrollbar;}.no-scrollbar::-webkit-scrollbar{width:0!important;height:0!important;}.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden;}.button.tooltip{opacity:1;}.dark,.dark p{color:#f1f1f1;}.nav-dark .nav>li>a{color:rgba(255,255,255,.8);}.nav-dark .nav-divided>li+li>a:after{border-color:rgba(255,255,255,.2);}html{overflow-x:hidden;}#main,#wrapper{background-color:#fff;position:relative;}.page-wrapper{padding-top:30px;padding-bottom:30px;}.header,.header-wrapper{width:100%;z-index:30;position:relative;background-size:cover;background-position:50% 0;}.header-bg-color{background-color:rgba(255,255,255,.9);}.header-bottom,.header-top{display:-ms-flexbox;display :flex;-ms-flex-align:center;align-items:center;-ms-flex-wrap:no-wrap;flex-wrap:no-wrap;}.header-bg-color,.header-bg-image{background-position:50% 0;}.header-top{background-color:#446084;z-index:11;position:relative;min-height:20px;}.header-main{z-index:10;position:relative;}.header-bottom{z-index:9;position:relative;min-height:35px;}.header-block{width:100%;min-height:15px;}.post{margin:0 0 30px;}.entry-header-text{padding:1.5em 0;}.entry-header-text-top{padding-top:0;}.entry-content{padding-top:1.5em;padding-bottom:1.5em;}.badge.post-date{top:7%;}.entry-image img{width:100%;}.box-blog-post .is-divider{margin-top:.5em;margin-bottom:.5em;height:2px;}.widget{margin-bottom:1.5em;}.widget ul{margin:0;}.widget li{list-style:none;}.wpcf7{color:#333;position:relative;}.wpcf7 p{padding:0;margin:0;}.wpcf7 br{display:none;}.wpcf7 label{display:inline-block;width:100%;}.wpcf7 .wpcf7-form-control-wrap{display:block;}.wpcf7 .wpcf7-response-output{margin:5px 0 0;border-radius:10px;}.absolute-footer,html{background-color:#5b5b5b;}.absolute-footer{color:rgba(0,0,0,.5);padding:10px 0 15px;font-size:.9em;}.absolute-footer.dark{color:rgba(255,255,255,.5);}.back-to-top{margin:0;opacity:0;bottom:20px;right:20px;-ms-transform:translateY(30%);transform:translateY(30%);}.logo{line-height:1;margin:0;}.logo a{text-decoration:none;display:block;color:#446084;font-size:32px;text-transform:uppercase;font-weight:bolder;margin:0;}.logo img{display:block;width:auto;}.header-logo-dark{display:none!important;}.logo-left .logo{margin-left:0;margin-right:30px;}@media screen and (max-width:849px) {.header-inner .nav{-ms-flex-wrap:nowrap;flex-wrap:nowrap;}.medium-logo-center .flex-left{-ms-flex-order:1;order:1;-ms-flex:1 1 0;flex:1 1 0;}.medium-logo-center .logo{-ms-flex-order:2;order:2;text-align:center;margin:0 15px;}.medium-logo-center .logo img{margin:0 auto;}.medium-logo-center .flex-right{-ms-flex:1 1 0;flex:1 1 0;-ms-flex-order:3;order:3;}}.searchform-wrapper form{margin-bottom:0;}.searchform{position:relative;}.searchform .button.icon{margin:0;}.searchform .button.icon i{font-size:1.2em;}.searchform-wrapper{width:100%;}.searchform-wrapper.form-flat .flex-col:last-of-type{margin-left:-2.9em;}.header .search-form .live-search-results{text-align:left;color:#111;top:105%;box-shadow:0 0 10px 0 rgba(0,0,0,.1);left:0;right:0;background-color:rgba(255,255,255,.95);position:absolute;}.icon-phone:before{content:"\e600";}.icon-menu:before{content:"\e800";}.icon-angle-up:before{content:"\f106";}.icon-search:before{content:"\e012";}.social-icons i{min-width:1em;}.row-sidebar .tabbed-content h5{color:#1976d2;}.more-info span i{padding-right:4px;}.form-flat input:not([type=submit]){background-color:transparent;box-shadow:none;border-color:transparent;color:currentColor!important;border-radius:99px;}.entry-header h6.entry-category{display:none;}.row-sidebar .nav-simple{background:#000;padding:5px 10px;}.row-sidebar .nav-simple li a{padding:10px;color:#fff;}.button.is-outline{border:none;background-color:transparent;border-radius:10px!important;}.absolute-footer{display:none;}.row-sidebar .tab-panels p{display:none;}.row-sidebar .post-item p{display:none;}.post-sidebar{padding-left:5px!important;padding-right:5px!important;}.text-tren{background-color:#1976d2!important;padding:15px 12px;text-align:center;}.text-tren p{font-size:15px;}.text-tren,.text-tren h3,.text-tren p{color:#fff;}.text-duoi:before{position:absolute;content:'';display:block;margin-top:-20px;left:0;width:100%;height:10px;background:linear-gradient(45deg,transparent 33.33%,#e9e9e9 33.333%,#e9e9e9 66.66%,transparent 66.66%),linear-gradient(-45deg,transparent 33.33%,#e9e9e9 33.33%,#e9e9e9 66.66%,transparent 66.66%);background-size:20px 40px;}.text-duoi{padding:10px;text-align:center;background:#e9e9ef;}.text-tren:after{position:absolute;content:'';display:block;}.is-divider{display:none;}.entry-image .badge{display:none;}.header-bottom .container{max-width:1147px;padding-left:0;border-top:1px solid #000;padding-right:0;}.header-bottom-nav li{margin-left:0;margin-right:0;}.header-bottom-nav li a{padding:10px 15px;}span.cat-label{color:#1669bb;font-weight:700!important;font-size:12px;}span.dem-luot{color:#ec681a;font-weight:700!important;font-size:12px;}span.post-meta{color:#7b7979;font-weight:700!important;font-size:12px;}.row-divided>.col+.col:not(.large-12){border:none;}h1.entry-title{font-size:24px!important;}.entry-content img{width:auto!important;}.div-no-padding{padding-bottom:0;}@media (max-width:855px){.post-sidebar{padding-bottom:0;}}.lazy{background-size:cover;min-height:20px;min-width:20px;}img{aspect-ratio:attr(width)/attr(height);max-width:100%;}iframe[src*='wvjbscheme']{display:none!important;}</style><script type="text/javascript">window.lazySizesConfig=window.lazySizesConfig||{},window.lazySizesConfig.lazyClass="lazy",window.lazySizesConfig.srcAttr="data-src",window.lazySizesConfig.loadMode=1,window.lazySizesConfig.expand=10,window.lazySizesConfig.expFactor=1.5,window.lazySizesConfig.hFac=.4,window.lazySizesConfig.init=!0;var _HWIO={data:{},filters:{},_readyjs_:{_all:[],_it:[]},add_event:function(a,b,c){void 0===c&&(c=10),this.filters[a]=this.filters[a]||[],this.filters[a].push({priority:c,callback:b})},addEvent:function(a,b,c){a.addEventListener?a.addEventListener(b,c,{passive:!1}):a.attachEvent&&a.attachEvent("on"+b,c)},genID:function(){return"_"+Math.random().toString(36).substr(2,9)},assign:function(){if(arguments.length<=1)return arguments.length?arguments[0]:null;for(var a=arguments[0],b=1;b<arguments.length;b++)for(var c in arguments[b])a[c]=arguments[b][c];return a},waitForExist:function(cb,test,tick,max,name){var i=0,k;test||(test=["window"]),"string"==typeof test?test=[test]:"number"==typeof test?(tick=test,test=[]):"object"==typeof test&&(console.log("waitForExist?",test),test=[]),"function"!=typeof test&&test.push("document.body"),tick=tick||500,max=max||100,name||(name="function"==typeof test?this.genID():test),k=btoa(unescape(encodeURIComponent(name))),_HWIO.data.__wait||(_HWIO.data.__wait={}),_HWIO.data.__wait[k]||(_HWIO.data.__wait[k]=0);var tm=setInterval(function(){var c=1;if("function"==typeof test)c=test();else for(var j=0;j<test.length;j++)if(void 0===eval("try{"+test[j]+"}catch(e){}")){c=0;break}c||_HWIO.data.__wait[k]++>max?(clearInterval(tm),_HWIO.data.__wait[k]-max<5&&("object"==typeof cb?cb[0]:cb).bind(_HWIO)()):"object"==typeof cb&&cb[1]&&cb[1].bind(_HWIO)()},tick);console.log("%c @add wait for "+name,"color:gray")},waitForFont:function(a,b){var c=function(){var e,f=0;for(e=0;e<a.length;e++)document.fonts.check("15px "+a[e])&&f++;f==a.length?(console.log("%c fonts loaded","color:pink"),b()):d++<2?setTimeout(c,500):b()},d=0;c()},timeout:function(a){setTimeout(function(){a("undefined"!=typeof jQuery?jQuery:null)})},readyjs:function(a,b){if("function"!=typeof a&&"function"!=typeof b)return jQuery(a);if(this.__readyjs){var c="undefined"!=typeof jQuery?jQuery:null;return"function"==typeof a?b?this.waitForExist(a,b):a(c):b(c)}"function"==typeof a?this._readyjs_._all.push(b?[a,b]:a):null===a?this._readyjs_._it.push(b):(this._readyjs_[a]||(this._readyjs_[a]=[]),this._readyjs_[a].push(b))},docReady:function(a,b){function c(c){var d=function(){a("undefined"!=typeof jQuery?jQuery:c)};if("complete"===document.readyState||"interactive"===document.readyState)return!c||b?setTimeout(d,b||1):d(),1}c()||document.addEventListener("DOMContentLoaded",c)},winReady:function(a){"complete"===document.readyState?a():this.addEvent(window,"load",a)},forUser:function(a){this._readyuse_||(this._readyuse_=[]),this.__readyit_1?a("undefined"!=typeof jQuery?jQuery:null):"function"==typeof a&&this._readyuse_.push(a)}}; _HWIO.ajax={"ajax_url":"\/wp-admin\/admin-ajax.php"};_HWIO.data.disalog=1;_HWIO.data.__sync=1;_HWIO.add_event('hpp_allow_js', function(v,att){	
+		if(att.l.indexOf(window.location.protocol)!==0 ) att.l = att.l.replace(/^http(s?):/g, window.location.protocol);
+		/*|| (location.href.indexOf('merge_js=0')===-1 && (att.l.indexOf('code.jquery.com')!==-1 || att.l.indexOf('jquery.min.js')!==-1))*/
+  return att.l.endsWith('.less') || att.l.endsWith('.html') || att.l.indexOf('/jquery.min.js')!==-1? 0:v;
+});
+_HWIO.add_event('hpp_allow_css', function(v,att){
+		if(att.l.indexOf(window.location.protocol)!==0 ) att.l = att.l.replace(/^http(s?):/g, window.location.protocol);
+	return v;
+});
+	</script><script>_HWIO.readyjs(function(){(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);})</script><script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"/#website","url":"/","name":"Learn Everything in WordPress","description":"Share WordPress Knowledge","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html#primaryimage","url":"wp-content/uploads/2022/07/learn-wordpress.jpg","contentUrl":"wp-content/uploads/2022/07/learn-wordpress.jpg","width":400,"height":277},{"@type":"WebPage","@id":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html#webpage","url":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html","name":"How to simply install Let's Encrypt certificate on VPS using HocVPS","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html#primaryimage"},"datePublished":"2022-07-01T18:54:13+00:00","dateModified":"2022-07-01T18:54:13+00:00","author":{"@id":"/#/schema/person/5b449ca06a5837130da9ffb95f2a09bf"},"breadcrumb":{"@id":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html"]}]},{"@type":"BreadcrumbList","@id":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS"}]},{"@type":"Person","@id":"/#/schema/person/5b449ca06a5837130da9ffb95f2a09bf","name":"admin","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/7266369df9aa25cdc4436b49d6e0253d?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/7266369df9aa25cdc4436b49d6e0253d?s=96&d=mm&r=g","caption":"admin"},"sameAs":[""]},{"@type":"CreativeWork","headline":"How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS","text":"\t\t\t\tThis post is part 2 of 3 in the Using HocVPS . seriesHocVPS does not integrate the Let's Encrypt certificate installation feature. So you install it manually like this guide on hocvps .But that tutorial is quite complicated.In this article, I will show you how to install Let's Encrypt SSL certificate using Certbot. It is simple and suitable for those who are new to VPS.Let's start together.Install CertbotFirst you install Certbot using the following commands:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tyum install epel-releaseyum install certbot-nginx\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t12\t\t\t\t\t\t\t\t\t\tyum install epel-releaseyum install certbot-nginx\t\t\t\t\t\t\t\t\t\t\t\t\t\tInstall Let's Encrypt SSL certificate using CerbotYou use the following command to install the certificate:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tcertbot --nginx -d khamphaso.com -d www.khamphaso.com\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tcertbot --nginx -d khamphaso.com -d www.khamphaso.com\t\t\t\t\t\t\t\t\t\t\t\t\t\tYou need to enter your email address and answer a few questions as follows: Automatic Let's Encrypt certificate renewal\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\texport VISUAL=nano; crontab -e15 3 * * * /usr/bin/certbot renew --quiet\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t12\t\t\t\t\t\t\t\t\t\texport VISUAL=nano; crontab -e15 3 * * * /usr/bin/certbot renew --quiet\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnable HTTP/2The Certbot configuration added to nginx does not support HTTP/2. Open the configuration file:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tnano /etc/nginx/conf.d/khamphaso.com.conf\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tnano /etc/nginx/conf.d/khamphaso.com.conf\t\t\t\t\t\t\t\t\t\t\t\t\t\tThen add http2 to the 2 paragraphs with At the same time you convert http to https in the rewrite line:Enable HTTP/2 for NGINX and optimize HTTPSNginx is having problems with HTTP2. You can see more in this article.HocVPS has a post to enable HTTP2. You see here.But I like to install Nginx compiler from Vultr .I will show you how to do this.Install Developer Tools:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tyum groupinstall -y 'Development Tools'\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tyum groupinstall -y 'Development Tools'\t\t\t\t\t\t\t\t\t\t\t\t\t\tDownload and install dependent Nginx libraries\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tyum install -y perl perl-devel perl-ExtUtils-Embed libxslt libxslt-devel libxml2 libxml2-devel gd gd-devel GeoIP GeoIP-devel\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tyum install -y perl perl-devel perl-ExtUtils-Embed libxslt libxslt-devel libxml2 libxml2-devel gd gd-devel GeoIP GeoIP-devel\t\t\t\t\t\t\t\t\t\t\t\t\t\tDownload and extract the latest Nginx mainline version:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tcd /root/wget https://nginx.org/download/nginx-1.13.2.tar.gz &amp;&amp; tar zxvf nginx-1.13.2.tar.gz\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t12\t\t\t\t\t\t\t\t\t\tcd /root/wget https://nginx.org/download/nginx-1.13.2.tar.gz &amp;&amp; tar zxvf nginx-1.13.2.tar.gz\t\t\t\t\t\t\t\t\t\t\t\t\t\tLoad libraries that will compile with Nginx\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# PCRE version 8.40wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz &amp;&amp; tar xzvf pcre-8.40.tar.gz# zlib version 1.2.11wget https://www.zlib.net/zlib-1.2.11.tar.gz &amp;&amp; tar xzvf zlib-1.2.11.tar.gz# OpenSSL version 1.1.0fwget https://www.openssl.org/source/openssl-1.1.0f.tar.gz &amp;&amp; tar xzvf openssl-1.1.0f.tar.gz\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t12345678\t\t\t\t\t\t\t\t\t\t# PCRE version 8.40wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz &amp;&amp; tar xzvf pcre-8.40.tar.gz&nbsp;# zlib version 1.2.11wget https://www.zlib.net/zlib-1.2.11.tar.gz &amp;&amp; tar xzvf zlib-1.2.11.tar.gz&nbsp;# OpenSSL version 1.1.0fwget https://www.openssl.org/source/openssl-1.1.0f.tar.gz &amp;&amp; tar xzvf openssl-1.1.0f.tar.gz\t\t\t\t\t\t\t\t\t\t\t\t\t\tRemove .tar.gz files\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\trm -rf *.tar.gz\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\trm -rf *.tar.gz\t\t\t\t\t\t\t\t\t\t\t\t\t\tGo to Nginx source code directory:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tcd ~/nginx-1.13.2\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tcd ~/nginx-1.13.2\t\t\t\t\t\t\t\t\t\t\t\t\t\tCopy the Nginx manual page to&nbsp; /usr/share/man/man8 :\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tcp ~/nginx-1.13.2/man/nginx.8 /usr/share/man/man8gzip /usr/share/man/man8/nginx.8\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t12\t\t\t\t\t\t\t\t\t\tcp ~/nginx-1.13.2/man/nginx.8 /usr/share/man/man8gzip /usr/share/man/man8/nginx.8\t\t\t\t\t\t\t\t\t\t\t\t\t\tCompile and install Nginx:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t./configure --prefix=/etc/nginx \\            --sbin-path=/usr/sbin/nginx \\            --modules-path=/usr/lib64/nginx/modules \\            --conf-path=/etc/nginx/nginx.conf \\            --error-log-path=/var/log/nginx/error.log \\            --pid-path=/var/run/nginx.pid \\            --lock-path=/var/run/nginx.lock \\            --user=nginx \\            --group=nginx \\            --build=CentOS \\            --builddir=nginx-1.13.2 \\            --with-select_module \\            --with-poll_module \\            --with-threads \\            --with-file-aio \\            --with-http_ssl_module \\            --with-http_v2_module \\            --with-http_realip_module \\            --with-http_addition_module \\            --with-http_xslt_module=dynamic \\            --with-http_image_filter_module=dynamic \\            --with-http_geoip_module=dynamic \\            --with-http_sub_module \\            --with-http_dav_module \\            --with-http_flv_module \\            --with-http_mp4_module \\            --with-http_gunzip_module \\            --with-http_gzip_static_module \\            --with-http_auth_request_module \\            --with-http_random_index_module \\            --with-http_secure_link_module \\            --with-http_degradation_module \\            --with-http_slice_module \\            --with-http_stub_status_module \\            --http-log-path=/var/log/nginx/access.log \\            --http-client-body-temp-path=/var/cache/nginx/client_temp \\            --http-proxy-temp-path=/var/cache/nginx/proxy_temp \\            --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \\            --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \\            --http-scgi-temp-path=/var/cache/nginx/scgi_temp \\            --with-mail=dynamic \\            --with-mail_ssl_module \\            --with-stream=dynamic \\            --with-stream_ssl_module \\            --with-stream_realip_module \\            --with-stream_geoip_module=dynamic \\            --with-stream_ssl_preread_module \\            --with-compat \\            --with-pcre=../pcre-8.40 \\            --with-pcre-jit \\            --with-zlib=../zlib-1.2.11 \\            --with-openssl=../openssl-1.1.0f \\            --with-openssl-opt=no-nextprotoneg \\            --with-debugmake sudo make install\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758\t\t\t\t\t\t\t\t\t\t./configure --prefix=/etc/nginx \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--sbin-path=/usr/sbin/nginx \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--modules-path=/usr/lib64/nginx/modules \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--conf-path=/etc/nginx/nginx.conf \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--error-log-path=/var/log/nginx/error.log \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--pid-path=/var/run/nginx.pid \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--lock-path=/var/run/nginx.lock \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--user=nginx \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--group=nginx \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--build=CentOS \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--builddir=nginx-1.13.2 \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-select_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-poll_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-threads \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-file-aio \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_ssl_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_v2_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_realip_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_addition_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_xslt_module=dynamic \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_image_filter_module=dynamic \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_geoip_module=dynamic \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_sub_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_dav_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_flv_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_mp4_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_gunzip_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_gzip_static_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_auth_request_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_random_index_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_secure_link_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_degradation_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_slice_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-http_stub_status_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--http-log-path=/var/log/nginx/access.log \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--http-client-body-temp-path=/var/cache/nginx/client_temp \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--http-proxy-temp-path=/var/cache/nginx/proxy_temp \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--http-scgi-temp-path=/var/cache/nginx/scgi_temp \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-mail=dynamic \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-mail_ssl_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-stream=dynamic \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-stream_ssl_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-stream_realip_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-stream_geoip_module=dynamic \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-stream_ssl_preread_module \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-compat \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-pcre=../pcre-8.40 \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-pcre-jit \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-zlib=../zlib-1.2.11 \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-openssl=../openssl-1.1.0f \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-openssl-opt=no-nextprotoneg \\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--with-debug&nbsp;&nbsp;make sudo make install\t\t\t\t\t\t\t\t\t\t\t\t\t\tRestart Nginx:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tsystemctl restart nginx\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tsystemctl restart nginx\t\t\t\t\t\t\t\t\t\t\t\t\t\tCheck Nginx version again\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tnginx -V\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tnginx -V\t\t\t\t\t\t\t\t\t\t\t\t\t\tAn OpenSSL version like this is OK:Check again you will see that the Http/2 protocol is enabled:Optimizing Https to test SSL Lab Test is A+ as below:How to optimize you see this article .You just need to configure Nginx to support HSTS (point 6 in the article) is enough.Add the following line to the Nginx configuration file and restart Nginx:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tadd_header Strict-Transport-Security \"max-age=31536000; includeSubDomains\" always;\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t1\t\t\t\t\t\t\t\t\t\tadd_header Strict-Transport-Security \"max-age=31536000; includeSubDomains\" always;\t\t\t\t\t\t\t\t\t\t\t\t\t\tIt's done.With the above simple way, installing the Let's Encrypt certificate no longer has to be manually configured like in hocvps.View articles in the seriesPrevious Part: Instructions for installing WordPress on CentOS 6/7 with HocVPS script Next part: Instructions for installing Memcached on CentOS 7 with HocVPS\t\t","dateModified":"2022-07-01T18:54:13+00:00","author":{"@type":"Person","name":"Admin","url":"/"}},{"@type":"CreativeWorkSeries","name":"How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS","description":"This post is part 2 of 3 in the Using HocVPS . series HocVPS does not integrate the Let&#8217;s Encrypt certificate installation feature. So you install it manually like this guide on hocvps . But that tutorial is quite complicated. In this article, I will show you how to install Let&#8217;s Encrypt SSL certificate using...","image":"wp-content/uploads/2022/07/learn-wordpress.jpg","aggregateRating":{"@type":"AggregateRating","ratingValue":4,"bestRating":"5","ratingCount":747}},{"@type":"WPHeader","url":"/","headline":"How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS","description":"This post is part 2 of 3 in the Using HocVPS . series HocVPS does not integrate the Let&#8217;s Encrypt certificate installation feature. So you install it manually like this guide on hocvps . But that tutorial is quite complicated. In this article, I will show you how to install Let&#8217;s Encrypt SSL certificate using..."},{"@type":"WPFooter","url":"/","copyrightYear":"2022","headline":"How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS","description":"This post is part 2 of 3 in the Using HocVPS . series HocVPS does not integrate the Let&#8217;s Encrypt certificate installation feature. So you install it manually like this guide on hocvps . But that tutorial is quite complicated. In this article, I will show you how to install Let&#8217;s Encrypt SSL certificate using..."},{"@type":"BreadcrumbList","@id":"/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"/"},{"@type":"ListItem","position":2,"name":"How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS"}]}]}</script><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black:#000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#fff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgba(6,147,227,1) 0%,#9b51e0 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,#7adcb4 0%,#00d082 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgba(255,105,0,1) 0%,#cf2e2e 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,#eee 0%,#a9b8c3 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,#4aeadc 0%,#9778d1 20%,#cf2aba 40%,#ee2c82 60%,#fb6962 80%,#fef84c 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,#ffceec 0%,#9896f0 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,#fecda5 0%,#fe2d2d 50%,#6b003e 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,#ffcb70 0%,#c751c0 50%,#4158d0 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,#fff5cb 0%,#b6e3d4 50%,#33a7b5 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,#caf880 0%,#71ce7e 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,#020381 0%,#2874fc 100%);--wp--preset--duotone--dark-grayscale:url(#wp-duotone-dark-grayscale);--wp--preset--duotone--grayscale:url(#wp-duotone-grayscale);--wp--preset--duotone--purple-yellow:url(#wp-duotone-purple-yellow);--wp--preset--duotone--blue-red:url(#wp-duotone-blue-red);--wp--preset--duotone--midnight:url(#wp-duotone-midnight);--wp--preset--duotone--magenta-yellow:url(#wp-duotone-magenta-yellow);--wp--preset--duotone--purple-green:url(#wp-duotone-purple-green);--wp--preset--duotone--blue-orange:url(#wp-duotone-blue-orange);--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;}.has-black-color{color:var(--wp--preset--color--black)!important;}.has-cyan-bluish-gray-color{color:var(--wp--preset--color--cyan-bluish-gray)!important;}.has-white-color{color:var(--wp--preset--color--white)!important;}.has-pale-pink-color{color:var(--wp--preset--color--pale-pink)!important;}.has-vivid-red-color{color:var(--wp--preset--color--vivid-red)!important;}.has-luminous-vivid-orange-color{color:var(--wp--preset--color--luminous-vivid-orange)!important;}.has-luminous-vivid-amber-color{color:var(--wp--preset--color--luminous-vivid-amber)!important;}.has-light-green-cyan-color{color:var(--wp--preset--color--light-green-cyan)!important;}.has-vivid-green-cyan-color{color:var(--wp--preset--color--vivid-green-cyan)!important;}.has-pale-cyan-blue-color{color:var(--wp--preset--color--pale-cyan-blue)!important;}.has-vivid-cyan-blue-color{color:var(--wp--preset--color--vivid-cyan-blue)!important;}.has-vivid-purple-color{color:var(--wp--preset--color--vivid-purple)!important;}.has-black-background-color{background-color:var(--wp--preset--color--black)!important;}.has-cyan-bluish-gray-background-color{background-color:var(--wp--preset--color--cyan-bluish-gray)!important;}.has-white-background-color{background-color:var(--wp--preset--color--white)!important;}.has-pale-pink-background-color{background-color:var(--wp--preset--color--pale-pink)!important;}.has-vivid-red-background-color{background-color:var(--wp--preset--color--vivid-red)!important;}.has-luminous-vivid-orange-background-color{background-color:var(--wp--preset--color--luminous-vivid-orange)!important;}.has-luminous-vivid-amber-background-color{background-color:var(--wp--preset--color--luminous-vivid-amber)!important;}.has-light-green-cyan-background-color{background-color:var(--wp--preset--color--light-green-cyan)!important;}.has-vivid-green-cyan-background-color{background-color:var(--wp--preset--color--vivid-green-cyan)!important;}.has-pale-cyan-blue-background-color{background-color:var(--wp--preset--color--pale-cyan-blue)!important;}.has-vivid-cyan-blue-background-color{background-color:var(--wp--preset--color--vivid-cyan-blue)!important;}.has-vivid-purple-background-color{background-color:var(--wp--preset--color--vivid-purple)!important;}.has-black-border-color{border-color:var(--wp--preset--color--black)!important;}.has-cyan-bluish-gray-border-color{border-color:var(--wp--preset--color--cyan-bluish-gray)!important;}.has-white-border-color{border-color:var(--wp--preset--color--white)!important;}.has-pale-pink-border-color{border-color:var(--wp--preset--color--pale-pink)!important;}.has-vivid-red-border-color{border-color:var(--wp--preset--color--vivid-red)!important;}.has-luminous-vivid-orange-border-color{border-color:var(--wp--preset--color--luminous-vivid-orange)!important;}.has-luminous-vivid-amber-border-color{border-color:var(--wp--preset--color--luminous-vivid-amber)!important;}.has-light-green-cyan-border-color{border-color:var(--wp--preset--color--light-green-cyan)!important;}.has-vivid-green-cyan-border-color{border-color:var(--wp--preset--color--vivid-green-cyan)!important;}.has-pale-cyan-blue-border-color{border-color:var(--wp--preset--color--pale-cyan-blue)!important;}.has-vivid-cyan-blue-border-color{border-color:var(--wp--preset--color--vivid-cyan-blue)!important;}.has-vivid-purple-border-color{border-color:var(--wp--preset--color--vivid-purple)!important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background:var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple)!important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background:var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan)!important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background:var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange)!important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background:var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red)!important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background:var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray)!important;}.has-cool-to-warm-spectrum-gradient-background{background:var(--wp--preset--gradient--cool-to-warm-spectrum)!important;}.has-blush-light-purple-gradient-background{background:var(--wp--preset--gradient--blush-light-purple)!important;}.has-blush-bordeaux-gradient-background{background:var(--wp--preset--gradient--blush-bordeaux)!important;}.has-luminous-dusk-gradient-background{background:var(--wp--preset--gradient--luminous-dusk)!important;}.has-pale-ocean-gradient-background{background:var(--wp--preset--gradient--pale-ocean)!important;}.has-electric-grass-gradient-background{background:var(--wp--preset--gradient--electric-grass)!important;}.has-midnight-gradient-background{background:var(--wp--preset--gradient--midnight)!important;}.has-small-font-size{font-size:var(--wp--preset--font-size--small)!important;}.has-medium-font-size{font-size:var(--wp--preset--font-size--medium)!important;}.has-large-font-size{font-size:var(--wp--preset--font-size--large)!important;}.has-x-large-font-size{font-size:var(--wp--preset--font-size--x-large)!important;}</style>
+<script id="w2phq" src="wp-content/mmr/optimize.js" async defer ></script>
+<link rel="https://api.w.org/" href="wp-json/" /><link rel="alternate" type="application/json" href="wp-json/wp/v2/posts/732" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 6.0" />
+<link rel='shortlink' href='/?p=732' />
+<style>.thrv_contents_table,.tve_sc_icon{display:none;}</style><!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6TKPML8K26');
+</script><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin /><!--[if IE]><link rel="stylesheet" type="text/css" href="wp-content/themes/flatsome/assets/css/ie-fallback.css"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><script>var head = document.getElementsByTagName('head')[0],style = document.createElement('style');style.type = 'text/css';style.styleSheet.cssText = ':before,:after{content:none !important';head.appendChild(style);setTimeout(function(){head.removeChild(style);}, 0);</script><script src="wp-content/themes/flatsome/assets/libs/ie-flexibility.js"></script><![endif]--><style id="custom-css" type="text/css">:root{--primary-color:#1976d2;}.full-width .ubermenu-nav,.container,.row{max-width:1170px;}.row.row-collapse{max-width:1140px;}.row.row-small{max-width:1162.5px;}.row.row-large{max-width:1200px;}.header-main{height:136px;}#logo img{max-height:136px;}#logo{width:269px;}.header-bottom{min-height:44px;}.header-top{min-height:39px;}.has-transparent + .page-title:first-of-type,.has-transparent + #main > .page-title,.has-transparent + #main > div > .page-title,.has-transparent + #main .page-header-wrapper:first-of-type .page-title{padding-top:216px;}.header.show-on-scroll,.stuck .header-main{height:70px!important;}.stuck #logo img{max-height:70px!important;}.header-bg-color,.header-wrapper{background-color:rgba(249,249,249,0.9);}.header-main .nav > li > a{line-height:16px;}.stuck .header-main .nav > li > a{line-height:50px;}.header-bottom-nav > li > a{line-height:16px;}@media (max-width: 549px) {.header-main{height:70px;}#logo img{max-height:70px;}}.header-top{background-color:#000!important;}.accordion-title.active,.has-icon-bg .icon .icon-inner,.logo a,.primary.is-underline,.primary.is-link,.badge-outline .badge-inner,.nav-outline > li.active> a,.nav-outline >li.active > a,.cart-icon strong,[data-color='primary'],.is-outline.primary{color:#1976d2;}[data-text-color="primary"]{color:#1976d2!important;}[data-text-bg="primary"]{background-color:#1976d2;}.scroll-to-bullets a,.featured-title,.label-new.menu-item > a:after,.nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,button[type="submit"],.button.wc-forward:not(.checkout):not(.checkout-button),.button.submit-button,.button.primary:not(.is-outline),.featured-table .title,.is-outline:hover,.has-icon:hover .icon-label,.nav-dropdown-bold .nav-column li > a:hover,.nav-dropdown.nav-dropdown-bold > li > a:hover,.nav-dropdown-bold.dark .nav-column li > a:hover,.nav-dropdown.nav-dropdown-bold.dark > li > a:hover,.is-outline:hover,.tagcloud a:hover,.grid-tools a,input[type='submit']:not(.is-form),.box-badge:hover .box-text,input.button.alt,.nav-box > li > a:hover,.nav-box > li.active > a,.nav-pills > li.active > a,.current-dropdown .cart-icon strong,.cart-icon:hover strong,.nav-line-bottom > li > a:before,.nav-line-grow > li > a:before,.nav-line > li > a:before,.banner,.header-top,.slider-nav-circle .flickity-prev-next-button:hover svg,.slider-nav-circle .flickity-prev-next-button:hover .arrow,.primary.is-outline:hover,.button.primary:not(.is-outline),input[type='submit'].primary,input[type='submit'].primary,input[type='reset'].button,input[type='button'].primary,.badge-inner{background-color:#1976d2;}.nav-vertical.nav-tabs > li.active > a,.scroll-to-bullets a.active,.nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,.accordion-title.active,.featured-table,.is-outline:hover,.tagcloud a:hover,blockquote,.has-border,.cart-icon strong:after,.cart-icon strong,.blockUI:before,.processing:before,.loading-spin,.slider-nav-circle .flickity-prev-next-button:hover svg,.slider-nav-circle .flickity-prev-next-button:hover .arrow,.primary.is-outline:hover{border-color:#1976d2;}.nav-tabs > li.active > a{border-top-color:#1976d2;}.widget_shopping_cart_content .blockUI.blockOverlay:before{border-left-color:#1976d2;}.woocommerce-checkout-review-order .blockUI.blockOverlay:before{border-left-color:#1976d2;}.slider .flickity-prev-next-button:hover svg,.slider .flickity-prev-next-button:hover .arrow{fill:#1976d2;}@media screen and (max-width: 549px){body{font-size:100%;}}body{font-family:"Helvetica,Arial,sans-serif",sans-serif;font-weight:0;}.nav > li > a{font-family:"Helvetica,Arial,sans-serif",sans-serif;font-weight:700;}h1,h2,h3,h4,h5,h6,.heading-font,.off-canvas-center .nav-sidebar.nav-vertical > li > a{font-family:"Helvetica,Arial,sans-serif",sans-serif;}h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2{font-weight:700;}.alt-font{font-family:"Helvetica,Arial,sans-serif",sans-serif;}.header:not(.transparent) .header-nav.nav > li > a{color:#140000;}.label-new.menu-item > a:after{content:"New";}.label-hot.menu-item > a:after{content:"Hot";}.label-sale.menu-item > a:after{content:"Sale";}.label-popular.menu-item > a:after{content:"Popular";}</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org\/","@graph":[{"@type":"LocalBusiness","image":null,"logo":null,"name":"json-localBusiness: Learn Everything in WordPress","url":"\/","address":{"@type":"PostalAddress","streetAddress":"json-LocalBusiness-address- ","addressLocality":"","addressRegion":"","postalCode":"","addressCountry":""},"description":"","email":"noreply@learn-wordpress.tk","sameAs":[],"openingHours":"Mo, Tu, We, Th, Fr 07:00-17:00","department":[{"@type":"Pharmacy","image":"https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcSsPR-iW_Obkz4-orhqQwYvchnwViIbJxVvY3z6dlt2EZlWO3uslg","name":"Mr. Hoang","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"7:00","closes":"6:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"8:00","closes":"17:00"}]}],"potentialAction":{"@type":"OrderAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.hoangweb.com\/dang-ki","inLanguage":"en_US","actionPlatform":["http:\/\/schema.org\/DesktopWebPlatform","http:\/\/schema.org\/IOSPlatform","http:\/\/schema.org\/AndroidPlatform"]},"deliveryMethod":["http:\/\/purl.org\/goodrelations\/v1#DeliveryModePickUp","http:\/\/purl.org\/goodrelations\/v1#DeliveryModeOwnFleet"],"priceSpecification":{"@type":"DeliveryChargeSpecification","appliesToDeliveryMethod":"http:\/\/purl.org\/goodrelations\/v1#DeliveryModePickUp","priceCurrency":"VND","price":0,"eligibleTransactionVolume":{"@type":"PriceSpecification","priceCurrency":"VND","price":500000}}},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4","reviewCount":"250"}},{"@type":"Person","name":"json-Person- admin","email":"noreply@learn-wordpress.tk","image":"https:\/\/secure.gravatar.com\/avatar\/1474c9e3f1f6bc910c89ccc43620f248?s=96&d=mm&r=g","sameAs":[""]}]}</script><!-- <PageMap><DataObject type="metatags"><Attribute name="kind">single_post</Attribute><Attribute name="title">How to simply install Let's Encrypt certificate on VPS using HocVPS</Attribute><Attribute name="description">This post is part 2 of 3 in the Using HocVPS . series HocVPS does not integrate the Let&amp;#8217;s Encrypt certificate installation feature. So you install it ma..</Attribute><Attribute name="categories">Tutorials</Attribute></DataObject></PageMap>
+ -->	<meta property="fb:app_id" content="104537736801666" />
+<meta property="fb:admins" content="100001613853961"/>
+
+	<div id="fb-root"></div>
+<script>_HWIO.readyjs(function(){(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=104537736801666";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));})</script>
+<style media="not all">@font-face{font-display:swap;font-family:FontAwesome;src:url(wp-content/plugins/font-awesome-4-menus/css/../fonts/fontawesome-webfont.eot?v=4.7.0);src :url(wp-content/plugins/font-awesome-4-menus/css/../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"),url(wp-content/plugins/font-awesome-4-menus/css/../fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"),url(wp-content/plugins/font-awesome-4-menus/css/../fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"),url(wp-content/plugins/font-awesome-4-menus/css/../fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"),url(wp-content/plugins/font-awesome-4-menus/css/../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");font-weight:400;font-style:normal;}@font-face{font-family:fl-icons;font-display:swap;src:url(wp-content/themes/flatsome/assets/css/icons/fl-icons.eot);src :url(wp-content/themes/flatsome/assets/css/icons/fl-icons.eot#iefix) format("embedded-opentype"),url(wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2) format("woff2"),url(wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf) format("truetype"),url(wp-content/themes/flatsome/assets/css/icons/fl-icons.woff) format("woff"),url(wp-content/themes/flatsome/assets/css/icons/fl-icons.svg#fl-icons) format("svg");}</style></head>
+
+<body class="post-template-default single single-post postid-732 single-format-standard hpp-lazy hpp-loading lightbox nav-dropdown-has-arrow">
+
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+<div id="wrapper">
+
+
+<header id="header" class="header ">
+   <div class="header-wrapper">
+	<div id="top-bar" class="header-top hide-for-sticky nav-dark hide-for-medium">
+    <div class="flex-row container">
+      <div class="flex-col hide-for-medium flex-left">
+          <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
+              <li id="menu-item-622" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-622"><a href="about-us.html" class="nav-top-link">About Us</a></li>
+<li id="menu-item-621" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-621"><a href="contact-us.html" class="nav-top-link">Contact Us</a></li>
+          </ul>
+      </div><!-- flex-col left -->
+
+      <div class="flex-col hide-for-medium flex-center">
+          <ul class="nav nav-center nav-small  nav-divided">
+                        </ul>
+      </div><!-- center -->
+
+      <div class="flex-col hide-for-medium flex-right">
+         <ul class="nav top-bar-nav nav-right nav-small  nav-divided">
+                        </ul>
+      </div><!-- .flex-col right -->
+
+      
+    </div><!-- .flex-row -->
+</div><!-- #header-top -->
+<div id="masthead" class="header-main hide-for-sticky">
+      <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            <!-- Header logo -->
+<a href="" title="Learn Everything in WordPress - Share WordPress Knowledge" rel="home">
+    <img width="269" height="136" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20269%20136'%3E%3C/svg%3E" data-src="wp-content/uploads/2019/04/logo-denhatdoc.com_.png" class=" lazy header_logo header-logo" alt="Learn Everything in WordPress"/><img  width="269" height="136" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20269%20136'%3E%3C/svg%3E" data-src="wp-content/uploads/2019/04/logo-denhatdoc.com_.png" class=" lazy header-logo-dark" alt="Learn Everything in WordPress"/></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+              <li class="nav-icon has-icon">
+  		<a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+		
+		  <i class="icon-menu" ></i>
+		  		</a>
+	</li>            </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-uppercase" >
+                          </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
+              <li class="header-block"><div class="header-block-block-1">	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_706855412">
+								<div class="img-inner dark" >
+			<img width="728" height="90" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20728%2090&#039;%3E%3C/svg%3E" class=" lazy attachment-large size-large" alt="" loading="lazy" data-src="wp-content/uploads/2022/07/BANNER-798X901.png" />						
+					</div>
+								
+<style scope="scope">#image_706855412{width:100%;}</style>
+	</div>
+	</div></li>            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+                          </ul>
+          </div>
+
+      </div><!-- .header-inner -->
+     
+      </div><!-- .header-main --><div id="wide-nav" class="header-bottom wide-nav hide-for-sticky hide-for-medium">
+    <div class="flex-row container">
+
+                        <div class="flex-col hide-for-medium flex-left">
+                <ul class="nav header-nav header-bottom-nav nav-left  nav-spacing-xlarge nav-uppercase">
+                    <li id="menu-item-623" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent active  menu-item-623"><a href="category/tutorials.html" class="nav-top-link">Tutorials</a></li>
+                </ul>
+            </div><!-- flex-col -->
+            
+            
+                        <div class="flex-col hide-for-medium flex-right flex-grow">
+              <ul class="nav header-nav header-bottom-nav nav-right  nav-spacing-xlarge nav-uppercase">
+                   <li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<div class="searchform-wrapper ux-search-box relative form-flat is-normal"><form method="get" class="searchform" action="/" role="search">
+		<div class="flex-row relative">
+			<div class="flex-col flex-grow">
+	   	   <input type="search" class="search-field mb-0" name="s" value="" id="s" placeholder="Search&hellip;" />
+			</div><!-- .flex-col -->
+			<div class="flex-col">
+				<button type="submit" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+					<i class="icon-search" ></i>				</button>
+			</div><!-- .flex-col -->
+		</div><!-- .flex-row -->
+    <div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>              </ul>
+            </div><!-- flex-col -->
+            
+            
+    </div><!-- .flex-row -->
+</div><!-- .header-bottom -->
+
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div><!-- .header-bg-container -->   </div><!-- header-wrapper-->
+</header>
+
+
+<main id="main" class="">
+
+<div id="content" class="blog-wrapper blog-single page-wrapper">
+	
+
+<div class="row row-large row-divided ">
+	
+	<div class="large-8 col">
+		
+
+
+<article id="post-732" class="post-732 post type-post status-publish format-standard has-post-thumbnail hentry category-tutorials">
+	<div class="article-inner ">
+		<header class="entry-header">
+	<div class="entry-header-text entry-header-text-top text-left">
+		<h6 class="entry-category is-xsmall">
+	<span itemprop="articleSection"><a class="p-category category fn name"  href="category/tutorials.html" rel="category tag">Tutorials</a></span></h6>
+
+<h1 class="entry-title">How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS</h1>
+<div class="entry-divider is-divider small"></div>
+
+<div class="more-info">
+													<span class="cat-label  is-xxsmall op-7 uppercase"><i class="fa fa-folder"></i>
+					Tutorials 					</span>
+					<span class="dem-luot"><i class="fa fa-eye"></i>
+					0 lượt xem</span>
+						<span class="post-meta is-small op-8"><i class="fa fa-clock-o"></i>July 1, 2022</span>
+					
+
+					</div>
+	</div><!-- .entry-header -->
+
+						<div class="entry-image relative">
+				<a href="how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html">
+    <img width="400" height="277" src="data:image/svg+xml,%3Csvg%20xmlns=&#039;http://www.w3.org/2000/svg&#039;%20viewBox=&#039;0%200%20400%20277&#039;%3E%3C/svg%3E" class=" lazy attachment-large size-large wp-post-image" alt="" data-src="wp-content/uploads/2022/07/learn-wordpress.jpg" /></a>
+				<div class="badge absolute top post-date badge-outline">
+	<div class="badge-inner">
+		<span class="post-date-day">01</span><br>
+		<span class="post-date-month is-small">Jul</span>
+	</div>
+</div>			</div><!-- .entry-image -->
+			</header><!-- post-header -->
+		<div class="entry-content single-page">
+
+	<div id="__body">
+<div class="seriesmeta">This post is part 2 of 3 in the Using HocVPS . series</div>
+<p>HocVPS does not integrate the Let&#8217;s Encrypt certificate installation feature. So you install it manually like <a target="_blank" rel="noopener" href="https://hocvps.com/cai-dat-lets-encrypt/">this guide on hocvps</a> .</p>
+<p>But that tutorial is quite complicated.</p>
+<p>In this article, I will show you how to install Let&#8217;s Encrypt SSL certificate using Certbot. It is simple and suitable for those who are new to VPS.</p>
+<p>Let&#8217;s start together.</p>
+<div id="toc_container" class="no_bullets"><p class="toc_title">Contents</p><ul class="toc_list"><li><a href="#Install_Certbot"><span class="toc_number toc_depth_1">1</span> Install Certbot</a></li><li><a href="#Install_Let8217s_Encrypt_SSL_certificate_using_Cerbot"><span class="toc_number toc_depth_1">2</span> Install Let&#8217;s Encrypt SSL certificate using Cerbot</a><ul><li><a href="#Enable_HTTP2"><span class="toc_number toc_depth_2">2.1</span> Enable HTTP/2</a></li></ul></li><li><a href="#Enable_HTTP2_for_NGINX_and_optimize_HTTPS"><span class="toc_number toc_depth_1">3</span> Enable HTTP/2 for NGINX and optimize HTTPS</a></li></ul></div>
+<h2><span id="Install_Certbot">Install Certbot</span></h2>
+<p>First you install Certbot using the following commands:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be24444278b406910513" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">yum install epel-release<br />
+yum install certbot-nginx</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be24444278b406910513-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be24444278b406910513-2">2</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be24444278b406910513-1"><span class="crayon-e">yum </span><span class="crayon-e">install </span><span class="crayon-v">epel</span><span class="crayon-o">&#8211;</span><span class="crayon-e">release</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be24444278b406910513-2"><span class="crayon-e">yum </span><span class="crayon-e">install </span><span class="crayon-v">certbot</span><span class="crayon-o">&#8211;</span><span class="crayon-v">nginx</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0012 seconds] --></p>
+<h2><span id="Install_Let8217s_Encrypt_SSL_certificate_using_Cerbot">Install Let&#8217;s Encrypt SSL certificate using Cerbot</span></h2>
+<p>You use the following command to install the certificate:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be244442792270397419" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">certbot &#8211;nginx -d khamphaso.com -d www.khamphaso.com</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be244442792270397419-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be244442792270397419-1"><span class="crayon-v">certbot</span><span class="crayon-h"> </span><span class="crayon-o">&#8212;</span><span class="crayon-v">nginx</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-i">d</span><span class="crayon-h"> </span><span class="crayon-v">khamphaso</span><span class="crayon-sy">.</span><span class="crayon-v">com</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-i">d</span><span class="crayon-h"> </span><span class="crayon-v">www</span><span class="crayon-sy">.</span><span class="crayon-v">khamphaso</span><span class="crayon-sy">.</span><span class="crayon-v">com</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+You need to enter your email address and answer a few questions as follows:</p>
+<p><img class=" lazy aligncenter size-full wp-image-12830" alt="install lets Encrypt certificate for vps using hocvps 1" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-1.png"> <img class=" lazy aligncenter size-full wp-image-12831" alt="install lets Encrypt certificate for vps using hocvps 2" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-2.png"></p>
+<p>Automatic Let&#8217;s Encrypt certificate renewal</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be244442794149794945" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">export VISUAL=nano; crontab -e<br />
+15 3 * * * /usr/bin/certbot renew &#8211;quiet</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be244442794149794945-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be244442794149794945-2">2</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be244442794149794945-1"><span class="crayon-e">export </span><span class="crayon-v">VISUAL</span><span class="crayon-o">=</span><span class="crayon-v">nano</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-v">crontab</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-i">e</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be244442794149794945-2"><span class="crayon-cn">15</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">bin</span><span class="crayon-o">/</span><span class="crayon-e">certbot </span><span class="crayon-v">renew</span><span class="crayon-h"> </span><span class="crayon-o">&#8212;</span><span class="crayon-v">quiet</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0002 seconds] --></p>
+<h3><span id="Enable_HTTP2">Enable HTTP/2</span></h3>
+<p>The Certbot configuration added to nginx does not support HTTP/2. Open the configuration file:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be244442795871954492" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">nano /etc/nginx/conf.d/khamphaso.com.conf</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be244442795871954492-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be244442795871954492-1"><span class="crayon-v">nano</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">conf</span><span class="crayon-sy">.</span><span class="crayon-v">d</span><span class="crayon-o">/</span><span class="crayon-v">khamphaso</span><span class="crayon-sy">.</span><span class="crayon-v">com</span><span class="crayon-sy">.</span><span class="crayon-v">conf</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+Then add http2 to the 2 paragraphs with</p>
+<p><img class=" lazy aligncenter size-full wp-image-12832" alt="install lets Encrypt certificate for vps using hocvps 5" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-5.png"> <img class=" lazy aligncenter size-full wp-image-12833" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-6.png"></p>
+<p>At the same time you convert http to https in the rewrite line:</p>
+<p><img class=" lazy aligncenter size-full wp-image-12848" alt="install lets Encrypt certificate for vps using hocvps 13" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-13.png"></p>
+<h2><span id="Enable_HTTP2_for_NGINX_and_optimize_HTTPS">Enable HTTP/2 for NGINX and optimize HTTPS</span></h2>
+<p>Nginx is having problems with HTTP2. You can see more in <a target="_blank" rel="noopener" href="https://www.nginx.com/blog/supporting-http2-google-chrome-users/">this article.</a></p>
+<p>HocVPS has a post to enable HTTP2. You see <a target="_blank" rel="noopener" href="https://hocvps.com/http2-nginx/">here.</a></p>
+<p>But I like to install <a target="_blank" rel="noopener" href="https://www.vultr.com/docs/how-to-compile-nginx-from-source-on-centos-7">Nginx compiler from Vultr</a> .</p>
+<p>I will show you how to do this.</p>
+<p>Install Developer Tools:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be244442797300136121" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">yum groupinstall -y &#8216;Development Tools&#8217;</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be244442797300136121-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be244442797300136121-1"><span class="crayon-e">yum </span><span class="crayon-v">groupinstall</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-i">y</span><span class="crayon-h"> </span><span class="crayon-s">&#8216;Development Tools&#8217;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+Download and install dependent Nginx libraries</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be244442798580631494" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">yum install -y perl perl-devel perl-ExtUtils-Embed libxslt libxslt-devel libxml2 libxml2-devel gd gd-devel GeoIP GeoIP-devel</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be244442798580631494-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be244442798580631494-1"><span class="crayon-e">yum </span><span class="crayon-v">install</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-i">y</span><span class="crayon-h"> </span><span class="crayon-e">perl </span><span class="crayon-v">perl</span><span class="crayon-o">&#8211;</span><span class="crayon-e">devel </span><span class="crayon-v">perl</span><span class="crayon-o">&#8211;</span><span class="crayon-v">ExtUtils</span><span class="crayon-o">&#8211;</span><span class="crayon-e">Embed </span><span class="crayon-e">libxslt </span><span class="crayon-v">libxslt</span><span class="crayon-o">&#8211;</span><span class="crayon-e">devel </span><span class="crayon-e">libxml2 </span><span class="crayon-v">libxml2</span><span class="crayon-o">&#8211;</span><span class="crayon-e">devel </span><span class="crayon-e">gd </span><span class="crayon-v">gd</span><span class="crayon-o">&#8211;</span><span class="crayon-e">devel </span><span class="crayon-e">GeoIP </span><span class="crayon-v">GeoIP</span><span class="crayon-o">&#8211;</span><span class="crayon-v">devel</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0002 seconds] --></p>
+<p>
+Download and extract the latest Nginx mainline version:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be24444279a195909639" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">cd /root/<br />
+wget https://nginx.org/download/nginx-1.13.2.tar.gz &amp;&amp; tar zxvf nginx-1.13.2.tar.gz</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be24444279a195909639-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be24444279a195909639-2">2</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be24444279a195909639-1"><span class="crayon-v">cd</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">root</span><span class="crayon-o">/</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be24444279a195909639-2"><span class="crayon-e">wget </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//nginx.org/download/nginx-1.13.2.tar.gz &amp;&amp; tar zxvf nginx-1.13.2.tar.gz</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+Load libraries that will compile with Nginx</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be24444279b603499388" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;"># PCRE version 8.40<br />
+wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz &amp;&amp; tar xzvf pcre-8.40.tar.gz</p>
+<p># zlib version 1.2.11<br />
+wget https://www.zlib.net/zlib-1.2.11.tar.gz &amp;&amp; tar xzvf zlib-1.2.11.tar.gz</p>
+<p># OpenSSL version 1.1.0f<br />
+wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz &amp;&amp; tar xzvf openssl-1.1.0f.tar.gz</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="show">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be24444279b603499388-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be24444279b603499388-2">2</div>
+<div class="crayon-num" data-line="crayon-62be24444279b603499388-3">3</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be24444279b603499388-4">4</div>
+<div class="crayon-num" data-line="crayon-62be24444279b603499388-5">5</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be24444279b603499388-6">6</div>
+<div class="crayon-num" data-line="crayon-62be24444279b603499388-7">7</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be24444279b603499388-8">8</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be24444279b603499388-1"><span class="crayon-p"># PCRE version 8.40</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be24444279b603499388-2"><span class="crayon-e">wget </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz &amp;&amp; tar xzvf pcre-8.40.tar.gz</span></div>
+<div class="crayon-line" id="crayon-62be24444279b603499388-3">&nbsp;</div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be24444279b603499388-4"><span class="crayon-p"># zlib version 1.2.11</span></div>
+<div class="crayon-line" id="crayon-62be24444279b603499388-5"><span class="crayon-e">wget </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//www.zlib.net/zlib-1.2.11.tar.gz &amp;&amp; tar xzvf zlib-1.2.11.tar.gz</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be24444279b603499388-6">&nbsp;</div>
+<div class="crayon-line" id="crayon-62be24444279b603499388-7"><span class="crayon-p"># OpenSSL version 1.1.0f</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be24444279b603499388-8"><span class="crayon-e">wget </span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//www.openssl.org/source/openssl-1.1.0f.tar.gz &amp;&amp; tar xzvf openssl-1.1.0f.tar.gz</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+Remove .tar.gz files</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be24444279d392938469" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">rm -rf *.tar.gz</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be24444279d392938469-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be24444279d392938469-1"><span class="crayon-v">rm</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-e ">rf *</span><span class="crayon-sy">.</span><span class="crayon-v">tar</span><span class="crayon-sy">.</span><span class="crayon-v">gz</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+Go to Nginx source code directory:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be2444427a2377595224" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">cd ~/nginx-1.13.2</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="show">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be2444427a2377595224-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be2444427a2377595224-1"><span class="crayon-v">cd</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">&#8211;</span><span class="crayon-cn">1.13.2</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+Copy the Nginx manual page to&nbsp; <code>/usr/share/man/man8</code> :</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be2444427a4174921807" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">cp ~/nginx-1.13.2/man/nginx.8 /usr/share/man/man8<br />
+gzip /usr/share/man/man8/nginx.8</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="show">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be2444427a4174921807-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a4174921807-2">2</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be2444427a4174921807-1"><span class="crayon-v">cp</span><span class="crayon-h"> </span><span class="crayon-o">~</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">&#8211;</span><span class="crayon-cn">1.13.2</span><span class="crayon-o">/</span><span class="crayon-v">man</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-sy">.</span><span class="crayon-cn">8</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">share</span><span class="crayon-o">/</span><span class="crayon-v">man</span><span class="crayon-o">/</span><span class="crayon-e">man8</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a4174921807-2"><span class="crayon-v">gzip</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">share</span><span class="crayon-o">/</span><span class="crayon-v">man</span><span class="crayon-o">/</span><span class="crayon-v">man8</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-sy">.</span><span class="crayon-cn">8</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0002 seconds] --></p>
+<p>
+Compile and install Nginx:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be2444427a5880622444" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">./configure &#8211;prefix=/etc/nginx \<br />
+            &#8211;sbin-path=/usr/sbin/nginx \<br />
+            &#8211;modules-path=/usr/lib64/nginx/modules \<br />
+            &#8211;conf-path=/etc/nginx/nginx.conf \<br />
+            &#8211;error-log-path=/var/log/nginx/error.log \<br />
+            &#8211;pid-path=/var/run/nginx.pid \<br />
+            &#8211;lock-path=/var/run/nginx.lock \<br />
+            &#8211;user=nginx \<br />
+            &#8211;group=nginx \<br />
+            &#8211;build=CentOS \<br />
+            &#8211;builddir=nginx-1.13.2 \<br />
+            &#8211;with-select_module \<br />
+            &#8211;with-poll_module \<br />
+            &#8211;with-threads \<br />
+            &#8211;with-file-aio \<br />
+            &#8211;with-http_ssl_module \<br />
+            &#8211;with-http_v2_module \<br />
+            &#8211;with-http_realip_module \<br />
+            &#8211;with-http_addition_module \<br />
+            &#8211;with-http_xslt_module=dynamic \<br />
+            &#8211;with-http_image_filter_module=dynamic \<br />
+            &#8211;with-http_geoip_module=dynamic \<br />
+            &#8211;with-http_sub_module \<br />
+            &#8211;with-http_dav_module \<br />
+            &#8211;with-http_flv_module \<br />
+            &#8211;with-http_mp4_module \<br />
+            &#8211;with-http_gunzip_module \<br />
+            &#8211;with-http_gzip_static_module \<br />
+            &#8211;with-http_auth_request_module \<br />
+            &#8211;with-http_random_index_module \<br />
+            &#8211;with-http_secure_link_module \<br />
+            &#8211;with-http_degradation_module \<br />
+            &#8211;with-http_slice_module \<br />
+            &#8211;with-http_stub_status_module \<br />
+            &#8211;http-log-path=/var/log/nginx/access.log \<br />
+            &#8211;http-client-body-temp-path=/var/cache/nginx/client_temp \<br />
+            &#8211;http-proxy-temp-path=/var/cache/nginx/proxy_temp \<br />
+            &#8211;http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp \<br />
+            &#8211;http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp \<br />
+            &#8211;http-scgi-temp-path=/var/cache/nginx/scgi_temp \<br />
+            &#8211;with-mail=dynamic \<br />
+            &#8211;with-mail_ssl_module \<br />
+            &#8211;with-stream=dynamic \<br />
+            &#8211;with-stream_ssl_module \<br />
+            &#8211;with-stream_realip_module \<br />
+            &#8211;with-stream_geoip_module=dynamic \<br />
+            &#8211;with-stream_ssl_preread_module \<br />
+            &#8211;with-compat \<br />
+            &#8211;with-pcre=../pcre-8.40 \<br />
+            &#8211;with-pcre-jit \<br />
+            &#8211;with-zlib=../zlib-1.2.11 \<br />
+            &#8211;with-openssl=../openssl-1.1.0f \<br />
+            &#8211;with-openssl-opt=no-nextprotoneg \<br />
+            &#8211;with-debug</p>
+<p>make<br />
+sudo make install</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-1">1</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-2">2</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-3">3</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-4">4</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-5">5</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-6">6</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-7">7</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-8">8</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-9">9</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-10">10</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-11">11</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-12">12</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-13">13</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-14">14</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-15">15</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-16">16</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-17">17</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-18">18</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-19">19</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-20">20</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-21">21</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-22">22</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-23">23</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-24">24</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-25">25</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-26">26</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-27">27</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-28">28</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-29">29</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-30">30</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-31">31</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-32">32</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-33">33</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-34">34</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-35">35</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-36">36</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-37">37</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-38">38</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-39">39</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-40">40</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-41">41</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-42">42</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-43">43</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-44">44</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-45">45</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-46">46</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-47">47</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-48">48</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-49">49</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-50">50</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-51">51</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-52">52</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-53">53</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-54">54</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-55">55</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-56">56</div>
+<div class="crayon-num" data-line="crayon-62be2444427a5880622444-57">57</div>
+<div class="crayon-num crayon-striped-num" data-line="crayon-62be2444427a5880622444-58">58</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be2444427a5880622444-1"><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">configure</span><span class="crayon-h"> </span><span class="crayon-o">&#8212;</span><span class="crayon-v">prefix</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-i">nginx</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">sbin</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">sbin</span><span class="crayon-o">/</span><span class="crayon-i">nginx</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">modules</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">lib64</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-i">modules</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">conf</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-v">etc</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-sy">.</span><span class="crayon-i">conf</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">error</span><span class="crayon-o">&#8211;</span><span class="crayon-v">log</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">log</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">error</span><span class="crayon-sy">.</span><span class="crayon-i">log</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">pid</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">run</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-sy">.</span><span class="crayon-i">pid</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">lock</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">run</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-sy">.</span><span class="crayon-i">lock</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">user</span><span class="crayon-o">=</span><span class="crayon-i">nginx</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">group</span><span class="crayon-o">=</span><span class="crayon-i">nginx</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">build</span><span class="crayon-o">=</span><span class="crayon-i">CentOS</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">builddir</span><span class="crayon-o">=</span><span class="crayon-v">nginx</span><span class="crayon-o">&#8211;</span><span class="crayon-cn">1.13.2</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">select</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">poll</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-i">threads</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">file</span><span class="crayon-o">&#8211;</span><span class="crayon-i">aio</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_ssl</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_v2</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_realip</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_addition</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_xslt_module</span><span class="crayon-o">=</span><span class="crayon-i">dynamic</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_image_filter_module</span><span class="crayon-o">=</span><span class="crayon-i">dynamic</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_geoip_module</span><span class="crayon-o">=</span><span class="crayon-i">dynamic</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_sub</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_dav</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_flv</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_mp4</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_gunzip</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_gzip_static</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_auth_request</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_random_index</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_secure_link</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_degradation</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_slice</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-34"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">http_stub_status</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-35"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">http</span><span class="crayon-o">&#8211;</span><span class="crayon-v">log</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">log</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">access</span><span class="crayon-sy">.</span><span class="crayon-i">log</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-36"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">http</span><span class="crayon-o">&#8211;</span><span class="crayon-v">client</span><span class="crayon-o">&#8211;</span><span class="crayon-v">body</span><span class="crayon-o">&#8211;</span><span class="crayon-v">temp</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">cache</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">client</span><span class="crayon-sy">_</span>temp<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-37"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">http</span><span class="crayon-o">&#8211;</span><span class="crayon-v">proxy</span><span class="crayon-o">&#8211;</span><span class="crayon-v">temp</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">cache</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">proxy</span><span class="crayon-sy">_</span>temp<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-38"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">http</span><span class="crayon-o">&#8211;</span><span class="crayon-v">fastcgi</span><span class="crayon-o">&#8211;</span><span class="crayon-v">temp</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">cache</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">fastcgi</span><span class="crayon-sy">_</span>temp<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-39"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">http</span><span class="crayon-o">&#8211;</span><span class="crayon-v">uwsgi</span><span class="crayon-o">&#8211;</span><span class="crayon-v">temp</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">cache</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">uwsgi</span><span class="crayon-sy">_</span>temp<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-40"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">http</span><span class="crayon-o">&#8211;</span><span class="crayon-v">scgi</span><span class="crayon-o">&#8211;</span><span class="crayon-v">temp</span><span class="crayon-o">&#8211;</span><span class="crayon-v">path</span><span class="crayon-o">=</span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">cache</span><span class="crayon-o">/</span><span class="crayon-v">nginx</span><span class="crayon-o">/</span><span class="crayon-v">scgi</span><span class="crayon-sy">_</span>temp<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-41"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">mail</span><span class="crayon-o">=</span><span class="crayon-i">dynamic</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-42"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">mail_ssl</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-43"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">stream</span><span class="crayon-o">=</span><span class="crayon-i">dynamic</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-44"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">stream_ssl</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-45"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">stream_realip</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-46"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">stream_geoip_module</span><span class="crayon-o">=</span><span class="crayon-i">dynamic</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-47"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">stream_ssl_preread</span><span class="crayon-sy">_</span>module<span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-48"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-i">compat</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-49"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">pcre</span><span class="crayon-o">=</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">pcre</span><span class="crayon-o">&#8211;</span><span class="crayon-cn">8.40</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-50"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">pcre</span><span class="crayon-o">&#8211;</span><span class="crayon-i">jit</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-51"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">zlib</span><span class="crayon-o">=</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">zlib</span><span class="crayon-o">&#8211;</span><span class="crayon-cn">1.2.11</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-52"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">openssl</span><span class="crayon-o">=</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-o">/</span><span class="crayon-v">openssl</span><span class="crayon-o">&#8211;</span><span class="crayon-cn">1.1.0f</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-53"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-v">openssl</span><span class="crayon-o">&#8211;</span><span class="crayon-v">opt</span><span class="crayon-o">=</span><span class="crayon-v">no</span><span class="crayon-o">&#8211;</span><span class="crayon-i">nextprotoneg</span><span class="crayon-h"> </span><span class="crayon-sy">\</span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-54"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&#8212;</span><span class="crayon-v">with</span><span class="crayon-o">&#8211;</span><span class="crayon-e">debug</span></div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-55">&nbsp;</div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-56">&nbsp;</div>
+<div class="crayon-line" id="crayon-62be2444427a5880622444-57"><span class="crayon-e">make </span></div>
+<div class="crayon-line crayon-striped-line" id="crayon-62be2444427a5880622444-58"><span class="crayon-e">sudo </span><span class="crayon-e">make </span><span class="crayon-v">install</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0025 seconds] --></p>
+<p>
+Restart Nginx:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be2444427a7005708318" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">systemctl restart nginx</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be2444427a7005708318-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be2444427a7005708318-1"><span class="crayon-e">systemctl </span><span class="crayon-e">restart </span><span class="crayon-v">nginx</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0000 seconds] --></p>
+<p>
+Check Nginx version again</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be2444427a8100671186" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">nginx -V</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be2444427a8100671186-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be2444427a8100671186-1"><span class="crayon-v">nginx</span><span class="crayon-h"> </span><span class="crayon-o">&#8211;</span><span class="crayon-v">V</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0000 seconds] --></p>
+<p>
+An OpenSSL version like this is OK:</p>
+<p><img class=" lazy aligncenter size-full wp-image-12834" alt="install lets Encrypt certificate for vps using hocvps 8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-8.png"></p>
+<p>Check again you will see that the Http/2 protocol is enabled:</p>
+<p><img class=" lazy aligncenter size-full wp-image-12835" alt="install lets Encrypt certificate for vps using hocvps 9" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-9.png"></p>
+<p>Optimizing Https to test <a target="_blank" rel="noopener" href="https://www.ssllabs.com/ssltest/">SSL Lab Test</a> is A+ as below:</p>
+<p><img class=" lazy aligncenter size-full wp-image-12836" alt="install lets Encrypt certificate for vps using hocvps 10" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-10.png"></p>
+<p>How to optimize you see <a target="_blank" rel="noopener" href="https://hocvps.com/toi-uu-https-tren-nginx/">this article</a> .</p>
+<p>You just need to configure Nginx to support HSTS (point 6 in the article) is enough.</p>
+<p>Add the following line to the Nginx configuration file and restart Nginx:</p>
+<p><!-- Crayon Syntax Highlighter v_2.7.2_beta --></p>
+<div id="crayon-62be2444427ab595447752" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span></p>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;">
+<div class="crayon-button crayon-nums-button" title="Toggle Line Numbers">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-plain-button" title="Toggle Plain Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-expand-button" title="Expand Code">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-copy-button" title="Copy">
+<div class="crayon-button-icon"></div>
+</div>
+<div class="crayon-button crayon-popup-button" title="Open Code In New Window">
+<div class="crayon-button-icon"></div>
+</div>
+</div>
+</div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">add_header Strict-Transport-Security &#8220;max-age=31536000; includeSubDomains&#8221; always;</textarea></div>
+<div class="crayon-main" style="">
+<table class="crayon-table">
+<tbody>
+<tr class="crayon-row">
+<td class="crayon-nums " data-settings="hide">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;">
+<div class="crayon-num" data-line="crayon-62be2444427ab595447752-1">1</div>
+</div>
+</td>
+<td class="crayon-code">
+<div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">
+<div class="crayon-line" id="crayon-62be2444427ab595447752-1"><span class="crayon-e">add_header </span><span class="crayon-v">Strict</span><span class="crayon-o">&#8211;</span><span class="crayon-v">Transport</span><span class="crayon-o">&#8211;</span><span class="crayon-i">Security</span><span class="crayon-h"> </span><span class="crayon-s">&#8220;max-age=31536000; includeSubDomains&#8221;</span><span class="crayon-h"> </span><span class="crayon-v">always</span><span class="crayon-sy">;</span></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table></div>
+</p></div>
+<p><!-- [Format Time: 0.0001 seconds] --></p>
+<p>
+<img class=" lazy aligncenter size-full wp-image-12837" alt="install lets Encrypt certificate for vps using hocvps 12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://thuthuatwp.com/wp-content/uploads/2017/10/cài-đặt-chứng-chỉ-lets-Encrypt-cho-vps-sử-dụng-hocvps-12.png"></p>
+<p>It&#8217;s done.</p>
+<p>With the above simple way, installing the Let&#8217;s Encrypt certificate no longer has to be manually configured like in hocvps.</p>
+<fieldset>
+<legend><strong>View articles in the series</strong></legend>
+<p><span class="series-nav-left">Previous Part: Instructions for installing WordPress on CentOS 6/7 with HocVPS script </span><span class="series-nav-right">Next part: Instructions for installing Memcached on CentOS 7 with HocVPS</span></fieldset>
+</div>
+<span  itemscope itemtype="http://schema.org/ImageObject">
+    	<link itemprop="url" href="wp-content/uploads/2022/07/learn-wordpress.jpg"><link itemprop="contentUrl" href="wp-content/uploads/2022/07/learn-wordpress.jpg">
+    	<!-- <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="wp-content/uploads/2022/07/learn-wordpress.jpg" class=" lazy hidden" itemprop="url"/> -->
+  </span>
+	
+	<div class="blog-share text-center"><div class="is-divider medium"></div><div class="social-icons share-icons share-row relative" ><a href="whatsapp://send?text=How%20to%20simply%20install%20Let%26%238217%3Bs%20Encrypt%20certificate%20on%20VPS%20using%20HocVPS - /how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" data-action="share/whatsapp/share" class="icon button circle is-outline tooltip whatsapp show-for-medium" title="Share on WhatsApp"><i class="icon-phone"></i></a><a href="//www.facebook.com/sharer.php?u=/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" data-label="Facebook" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip facebook" title="Share on Facebook"><i class="icon-facebook" ></i></a><a href="//twitter.com/share?url=/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip twitter" title="Share on Twitter"><i class="icon-twitter" ></i></a><a href="mailto:enteryour@addresshere.com?subject=How%20to%20simply%20install%20Let%26%238217%3Bs%20Encrypt%20certificate%20on%20VPS%20using%20HocVPS&amp;body=Check%20this%20out:%20/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" rel="nofollow" class="icon button circle is-outline tooltip email" title="Email to a Friend"><i class="icon-envelop" ></i></a><a href="//pinterest.com/pin/create/button/?url=/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html&amp;media=/wp-content/uploads/2022/07/learn-wordpress.jpg&amp;description=How%20to%20simply%20install%20Let%26%238217%3Bs%20Encrypt%20certificate%20on%20VPS%20using%20HocVPS" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip pinterest" title="Pin on Pinterest"><i class="icon-pinterest" ></i></a><a href="//www.linkedin.com/shareArticle?mini=true&url=/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html&title=How%20to%20simply%20install%20Let%26%238217%3Bs%20Encrypt%20certificate%20on%20VPS%20using%20HocVPS" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;"  rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip linkedin" title="Share on LinkedIn"><i class="icon-linkedin" ></i></a></div></div></div><!-- .entry-content2 -->
+
+	<footer class="entry-meta text-left">
+		This entry was posted in <span itemprop="articleSection"><a class="p-category category fn name"  href="category/tutorials.html" rel="category tag">Tutorials</a></span>. Bookmark the <a href="how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html" title="Permalink to How to simply install Let&#8217;s Encrypt certificate on VPS using HocVPS" rel="bookmark">permalink</a>.	</footer><!-- .entry-meta -->
+
+	<div class="entry-author author-box">
+		<div class="div-author">
+			<div class="flex-col mr circle">
+				<div class="blog-author-image">
+					<img itemprop="image"  alt='' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src='https://secure.gravatar.com/avatar/7266369df9aa25cdc4436b49d6e0253d?s=90&#038;d=mm&#038;r=g' data-srcset='https://secure.gravatar.com/avatar/7266369df9aa25cdc4436b49d6e0253d?s=180&#038;d=mm&#038;r=g 2x' class=' lazy avatar avatar-90 photo' height='90' width='90' loading='lazy'/>				</div>
+			</div><!-- .flex-col -->
+			<div class="flex-col flex-grow">
+				<h5 class="author-name uppercase pt-half">
+					admin				</h5>
+				<p class="author-desc small"></p>
+			</div><!-- .flex-col -->
+		</div>
+	</div>
+
+        <nav role="navigation" id="nav-below" class="navigation-post">
+	<div class="flex-row next-prev-nav bt bb">
+		<div class="flex-col flex-grow nav-prev text-left">
+			    <div class="nav-previous"><a href="how-to-speed-up-wordpress-using-wp-super-cache.html" rel="prev"><span class="hide-for-small"><i class="icon-angle-left" ></i></span> How to speed up WordPress using WP Super Cache</a></div>
+		</div>
+		<div class="flex-col flex-grow nav-next text-right">
+			    <div class="nav-next"><a href="how-to-create-a-simple-multi-color-menu-in-wordpress.html" rel="next">How to create a simple multi-color Menu in WordPress? <span class="hide-for-small"><i class="icon-angle-right" ></i></span></a></div>		</div>
+	</div>
+
+	    </nav><!-- #nav-below -->
+
+    
+<div class="related-post">
+<div  class="" style="margin-top: 30px;margin-bottom: 20px"> <h7>Bài viết liên quan</h7><div class="duong-line"></div></div>
+<div class="clearfix"></div>
+   <div class="row large-columns-3 medium-columns-2 small-columns-1 has-shadow row-box-shadow-1 row-box-shadow-1-hover">
+
+
+ 
+  		<div class="col post-item">
+			<div class="col-inner">
+			<a href="how-to-turn-off-gravatar-on-wordpress-learn-wordpress-from-a-to-z.html" class="plain">
+				<div class="box box-bounce box-text-bottom box-blog-post has-hover">
+            					<div class="box-image">
+  						<div class="image-cover" style="padding-top:56%;">
+  							<img src="https://i.imgur.com/3GIbq5F.png" alt="How to turn off Gravatar on WordPress - Learn Wordpress from a to z thumbnail" class=" lazy " />						  							  						</div>
+  						  					</div><!-- .box-image -->
+          					<div class="box-text text-center">
+					<div class="box-text-inner blog-post-inner">
+
+					
+										<h5 class="post-title is-large ">How to turn off Gravatar on WordPress &#8211; Learn WordPress from a to z</h5>
+					<div class="post-meta is-small op-8">Jul 7, 2022</div>					<div class="is-divider"></div>
+										
+										
+					
+					
+					</div><!-- .box-text-inner -->
+					</div><!-- .box-text -->
+									</div><!-- .box -->
+				</a><!-- .link -->
+			</div><!-- .col-inner -->
+		</div><!-- .col -->
+	
+	
+
+
+
+
+
+ 
+  		<div class="col post-item">
+			<div class="col-inner">
+			<a href="categories-and-tags-learn-how-to-create-categories-and-tags.html" class="plain">
+				<div class="box box-bounce box-text-bottom box-blog-post has-hover">
+            					<div class="box-image">
+  						<div class="image-cover" style="padding-top:56%;">
+  							<img src="https://i.imgur.com/8xQ7fQq.jpg" alt="Categories and Tags - Learn how to create categories and tags thumbnail" class=" lazy " />						  							  						</div>
+  						  					</div><!-- .box-image -->
+          					<div class="box-text text-center">
+					<div class="box-text-inner blog-post-inner">
+
+					
+										<h5 class="post-title is-large ">Categories and Tags &#8211; Learn how to create categories and tags</h5>
+					<div class="post-meta is-small op-8">Jul 3, 2022</div>					<div class="is-divider"></div>
+										
+										
+					
+					
+					</div><!-- .box-text-inner -->
+					</div><!-- .box-text -->
+									</div><!-- .box -->
+				</a><!-- .link -->
+			</div><!-- .col-inner -->
+		</div><!-- .col -->
+	
+	
+
+
+
+
+
+ 
+  		<div class="col post-item">
+			<div class="col-inner">
+			<a href="how-to-create-and-use-shortened-links-in-wordpress-learn-wordpress-from-a-to-z.html" class="plain">
+				<div class="box box-bounce box-text-bottom box-blog-post has-hover">
+            					<div class="box-image">
+  						<div class="image-cover" style="padding-top:56%;">
+  							<img src="https://i.imgur.com/obyyMgH.png" alt="How to create and use shortened links in WordPress? - Learn Wordpress from a to z thumbnail" class=" lazy " />						  							  						</div>
+  						  					</div><!-- .box-image -->
+          					<div class="box-text text-center">
+					<div class="box-text-inner blog-post-inner">
+
+					
+										<h5 class="post-title is-large ">How to create and use shortened links in WordPress? &#8211; Learn WordPress from a to z</h5>
+					<div class="post-meta is-small op-8">Jul 3, 2022</div>					<div class="is-divider"></div>
+										
+										
+					
+					
+					</div><!-- .box-text-inner -->
+					</div><!-- .box-text -->
+									</div><!-- .box -->
+				</a><!-- .link -->
+			</div><!-- .col-inner -->
+		</div><!-- .col -->
+	
+	
+
+
+
+</div>
+ </div>
+
+	</div><!-- .article-inner -->
+</article><!-- #-732 -->
+
+
+
+
+<div id="comments" class="comments-area">
+
+	
+	
+	
+	
+</div><!-- #comments -->
+	</div> <!-- .large-9 -->
+
+	<div class="post-sidebar large-4 col">
+		<div id="secondary" class="widget-area " role="complementary">
+		<aside id="text-2" class="widget widget_text">			<div class="textwidget"><div class="row row-sidebar"  id="row-634122422">
+<div class="col div-no-padding small-12 large-12"  >
+<div class="col-inner"  >
+<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1684041777">
+<div class="img-inner dark" ></div>
+<style scope="scope"><p>#image_1684041777{width:100%;}</style>
+</p></div>
+<div class="gap-element clearfix" style="display:block; height:auto; padding-top:10px"></div>
+<div role="form" class="wpcf7" id="wpcf7-f624-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"></div>
+<form action="/how-to-simply-install-lets-encrypt-certificate-on-vps-using-hocvps.html?to_html=1663468706.end#wpcf7-f624-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="624" /><br />
+<input type="hidden" name="_wpcf7_version" value="5.1.4" /><br />
+<input type="hidden" name="_wpcf7_locale" value="en_US" /><br />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f624-o1" /><br />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+</div>
+<div class="row-form">
+<div class="text-tren">
+<h3>120 EBOOK DIGITAL MARKETING</h3>
+<p>Enter your Email address below to receive a full set of 120 Digital Marketing Ebooks collected by De Nhat Du. See details</p>
+</div>
+<div class="text-duoi">
+<label><br />
+    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="your name" /></span> </label></p>
+<p><label>  <span class="wpcf7-form-control-wrap your-email"><input type="text" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Email" /></span></label><br />
+<input type="submit" value="Register now" class="wpcf7-form-control wpcf7-submit" />
+</div>
+</div>
+<p style="display: none !important;"><label>&#916;<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="_wpcf7_ak_js" value="106"/><script>_HWIO.readyjs(function(){document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );})</script></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div>
+</form>
+</div>
+<div class="tabbed-content">
+<ul class="nav nav-simple nav-uppercase nav-size-small nav-left">
+<li class="tab active has-icon"><a href="#tab_Ưa-thích"><span>Ưa thích</span></a></li>
+<li class="tab has-icon"><a href="#tab_mới-nhất"><span>Mới nhất</span></a></li>
+<li class="tab has-icon"><a href="#tab_bình-luận"><span>Bình luận</span></a></li>
+</ul>
+<div class="tab-panels">
+<div class="panel active entry-content" id="tab_Ưa-thích">
+<div class="row large-columns-1 medium-columns-1 small-columns-1 row-xsmall">
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="how-to-turn-off-gravatar-on-wordpress-learn-wordpress-from-a-to-z.html" class="plain"></p>
+<div class="box box-vertical box-text-bottom box-blog-post has-hover">
+<div class="box-image" style="width:27%;">
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/3GIbq5F.png" alt="How to turn off Gravatar on WordPress - Learn WordPress from a to z thumbnail" class=" lazy " />  							  							  						</div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-left is-small" >
+<div class="box-text-inner blog-post-inner">
+<h5 class="post-title is-large ">How to turn off Gravatar on WordPress &#8211; Learn WordPress from a to z</h5>
+<div class="post-meta is-small op-8">July 7, 2022</div>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="categories-and-tags-learn-how-to-create-categories-and-tags.html" class="plain"></p>
+<div class="box box-vertical box-text-bottom box-blog-post has-hover">
+<div class="box-image" style="width:27%;">
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/8xQ7fQq.jpg" alt="Categories and Tags - Learn how to create categories and tags thumbnail" class=" lazy " />  							  							  						</div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-left is-small" >
+<div class="box-text-inner blog-post-inner">
+<h5 class="post-title is-large ">Categories and Tags &#8211; Learn how to create categories and tags</h5>
+<div class="post-meta is-small op-8">July 3, 2022</div>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="how-to-create-and-use-shortened-links-in-wordpress-learn-wordpress-from-a-to-z.html" class="plain"></p>
+<div class="box box-vertical box-text-bottom box-blog-post has-hover">
+<div class="box-image" style="width:27%;">
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/obyyMgH.png" alt="How to create and use shortened links in WordPress? - Learn WordPress from a to z thumbnail" class=" lazy " />  							  							  						</div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-left is-small" >
+<div class="box-text-inner blog-post-inner">
+<h5 class="post-title is-large ">How to create and use shortened links in WordPress? &#8211; Learn WordPress from a to z</h5>
+<div class="post-meta is-small op-8">July 3, 2022</div>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="using-ultimate-member-plugin-learn-wordpress-from-a-to-z.html" class="plain"></p>
+<div class="box box-vertical box-text-bottom box-blog-post has-hover">
+<div class="box-image" style="width:27%;">
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/iy6uOMK.png" alt="Using Ultimate Member plugin - Learn WordPress from a to z thumbnail" class=" lazy " />  							  							  						</div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-left is-small" >
+<div class="box-text-inner blog-post-inner">
+<h5 class="post-title is-large ">Using Ultimate Member plugin &#8211; Learn WordPress from a to z</h5>
+<div class="post-meta is-small op-8">July 3, 2022</div>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="create-wordpress-push-notifications-with-onesignal.html" class="plain"></p>
+<div class="box box-vertical box-text-bottom box-blog-post has-hover">
+<div class="box-image" style="width:27%;">
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/JJCjB3U.png" alt="Create WordPress Push Notifications with OneSignal thumbnail" class=" lazy " />  							  							  						</div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-left is-small" >
+<div class="box-text-inner blog-post-inner">
+<h5 class="post-title is-large ">Create WordPress Push Notifications with OneSignal</h5>
+<div class="post-meta is-small op-8">July 3, 2022</div>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col -->
+</div>
+</div>
+<div class="panel entry-content" id="tab_mới-nhất">
+<div class="row large-columns-1 medium-columns-1 small-columns-1 row-xsmall">
+  </div>
+</div>
+<div class="panel entry-content" id="tab_bình-luận">
+<ul class="sidebar-wrapper ul-reset"></ul>
+</div>
+</div>
+</div>
+<div class="gap-element clearfix" style="display:block; height:auto; padding-top:30px"></div>
+<h3 class="widget-title">Xem nhiều</h3>
+<div class="row large-columns-1 medium-columns-1 small-columns-1 row-xsmall">
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="how-to-turn-off-gravatar-on-wordpress-learn-wordpress-from-a-to-z.html" class="plain"></p>
+<div class="box box-overlay dark box-text-bottom box-blog-post has-hover">
+<div class="box-image" >
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/3GIbq5F.png" alt="How to turn off Gravatar on WordPress - Learn WordPress from a to z thumbnail" class=" lazy " />  							</p>
+<div class="overlay" style="background-color: rgba(0,0,0,.25)"></div>
+</p></div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-center" >
+<div class="box-text-inner blog-post-inner">
+<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tutorials 					</p>
+<h5 class="post-title is-large ">How to turn off Gravatar on WordPress &#8211; Learn WordPress from a to z</h5>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="categories-and-tags-learn-how-to-create-categories-and-tags.html" class="plain"></p>
+<div class="box box-overlay dark box-text-bottom box-blog-post has-hover">
+<div class="box-image" >
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/8xQ7fQq.jpg" alt="Categories and Tags - Learn how to create categories and tags thumbnail" class=" lazy " />  							</p>
+<div class="overlay" style="background-color: rgba(0,0,0,.25)"></div>
+</p></div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-center" >
+<div class="box-text-inner blog-post-inner">
+<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tutorials 					</p>
+<h5 class="post-title is-large ">Categories and Tags &#8211; Learn how to create categories and tags</h5>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="how-to-create-and-use-shortened-links-in-wordpress-learn-wordpress-from-a-to-z.html" class="plain"></p>
+<div class="box box-overlay dark box-text-bottom box-blog-post has-hover">
+<div class="box-image" >
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/obyyMgH.png" alt="How to create and use shortened links in WordPress? - Learn WordPress from a to z thumbnail" class=" lazy " />  							</p>
+<div class="overlay" style="background-color: rgba(0,0,0,.25)"></div>
+</p></div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-center" >
+<div class="box-text-inner blog-post-inner">
+<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tutorials 					</p>
+<h5 class="post-title is-large ">How to create and use shortened links in WordPress? &#8211; Learn WordPress from a to z</h5>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col --></p>
+<div class="col post-item" >
+<div class="col-inner">
+			<a href="using-ultimate-member-plugin-learn-wordpress-from-a-to-z.html" class="plain"></p>
+<div class="box box-overlay dark box-text-bottom box-blog-post has-hover">
+<div class="box-image" >
+<div class="image-cover" style="padding-top:56.25%;">
+  							<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-src="https://i.imgur.com/iy6uOMK.png" alt="Using Ultimate Member plugin - Learn WordPress from a to z thumbnail" class=" lazy " />  							</p>
+<div class="overlay" style="background-color: rgba(0,0,0,.25)"></div>
+</p></div>
+</p></div>
+<p><!-- .box-image --></p>
+<div class="box-text text-center" >
+<div class="box-text-inner blog-post-inner">
+<p class="cat-label  is-xxsmall op-7 uppercase">
+					Tutorials 					</p>
+<h5 class="post-title is-large ">Using Ultimate Member plugin &#8211; Learn WordPress from a to z</h5>
+<div class="is-divider"></div>
+</p></div>
+<p><!-- .box-text-inner -->
+					</div>
+<p><!-- .box-text -->
+									</div>
+<p><!-- .box --><br />
+				</a><!-- .link -->
+			</div>
+<p><!-- .col-inner -->
+		</div>
+<p><!-- .col -->
+</div>
+</div>
+</div>
+<style scope="scope">
+</style>
+</div>
+</div>
+		</aside></div><!-- #secondary -->
+	</div><!-- .post-sidebar -->
+
+</div><!-- .row -->
+
+</div><!-- #content .page-wrapper -->
+
+
+</main><!-- #main -->
+
+<footer id="footer" class="footer-wrapper">
+
+		<section class="section dark" id="section_1006225519">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded" >
+
+			
+			
+			
+
+		</div><!-- .section-bg -->
+
+		<div class="section-content relative">
+			
+
+<div class="row"  id="row-1968030598">
+
+<div class="col medium-4 small-12 large-4"  ><div class="col-inner"  >
+<h3 class="widget-title">Về Đệ Nhất Độc</h3>
+<img class=" lazy alignnone size-full wp-image-149" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20280%2080'%3E%3C/svg%3E" data-src="wp-content/uploads/2019/04/logo-denhatdoc.com_-1.png" alt="" width="280" height="80" />
+
+Đệ Nhất Độc nơi chia sẻ và tổng hợp những kiến thức về Digital Maketing Online không ở đâu có, không ở đâu chia sẻ.Cùng học thêm nhiều kiến thức bổ ích với Đệ Nhất Độc nhé
+
+</div></div>
+<div class="col medium-4 small-12 large-4"  ><div class="col-inner"  >
+<h3 class="widget-title">FANPAGE</h3>
+<div id="fb-root"></div>
+<script>_HWIO.readyjs(function(){(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1058228637573834";fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));})</script>
+<div class="fb-page" data-href="https://www.facebook.com/hoangweb/" data-width="340" data-hide-cover="false" data-show-facepile="true"></div>
+</div></div>
+<div class="col medium-4 small-12 large-4"  ><div class="col-inner"  >
+<h3 class="widget-title">THEO DÕI CHÚNG TÔI</h3>
+<div class="social-icons follow-icons" style="font-size:118%"><a href="#" target="_blank" data-label="Facebook"  rel="noopener noreferrer nofollow" class="icon button circle is-outline facebook tooltip" title="Follow on Facebook"><i class="icon-facebook" ></i></a><a href="#" target="_blank"  data-label="Twitter"  rel="noopener noreferrer nofollow" class="icon button circle is-outline  twitter tooltip" title="Follow on Twitter"><i class="icon-twitter" ></i></a><a href="#" target="_blank" rel="noopener noreferrer nofollow"  data-label="Pinterest"  class="icon button circle is-outline  pinterest tooltip" title="Follow on Pinterest"><i class="icon-pinterest" ></i></a><a href="#" target="_blank" rel="noopener noreferrer nofollow" data-label="LinkedIn" class="icon button circle is-outline  linkedin tooltip" title="Follow on LinkedIn"><i class="icon-linkedin" ></i></a><a href="#" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon button circle is-outline  youtube tooltip" title="Follow on YouTube"><i class="icon-youtube" ></i></a></div>
+
+</div></div>
+
+</div>
+
+		</div><!-- .section-content -->
+
+		
+<style scope="scope">#section_1006225519{padding-top:30px;padding-bottom:30px;background-color:#000;}</style>
+	</section>
+	
+<div class="absolute-footer dark medium-text-center small-text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+            <div class="copyright-footer">
+              </div>
+          </div><!-- .left -->
+  </div><!-- .container -->
+</div><!-- .absolute-footer -->
+<a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link"><i class="icon-angle-up" ></i></a>
+
+</footer><!-- .footer-wrapper -->
+
+</div><!-- #wrapper -->
+
+<!-- Mobile Sidebar -->
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+    <div class="sidebar-menu no-scrollbar ">
+        <ul class="nav nav-sidebar  nav-vertical nav-uppercase">
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-623"><a href="category/tutorials.html" class="nav-top-link">Tutorials</a></li>
+        </ul>
+    </div><!-- inner -->
+</div><!-- #mobile-menu -->
+<script id="hqjs" type="text/javascript">/* <![CDATA[ */
+/*[contact-form-7]*/
+var wpcf7 = {"apiSettings":{"root":"\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/*[toc-front]*/
+var tocplus = {"visibility_show":"show","visibility_hide":"hide","width":"Auto"};
+/*[flatsome-js]*/
+var flatsomeVars = {"ajaxurl":"\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"70","lightbox":{"close_markup":"<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"><\/line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"><\/line><\/svg><\/button>","close_btn_inside":false},"user":{"can_edit_pages":false}};
+_HWIO.assets=_HWIO.assets||{};_HWIO.extra_assets=_HWIO.assign(_HWIO.assets,{"flatsome-ionicons":{"t":"css","l":"\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.7.0\/css\/font-awesome.min.css"},"flatsome-googlefonts":{"t":"css","l":"\/\/fonts.googleapis.com\/css?family=Helvetica,Arial,sans-serif:regular,700,regular,700,default&display=swap"},"hpp-s-0":{"t":"css","l":"wp-content\/mmr\/900d3810.css"},"hpp-0":{"t":"js","l":"wp-content\/mmr\/183125f5.js"},"hpp-1":{"t":"js","l":"wp-content\/plugins\/wp2speed\/lib\/asset\/custom.js","deps":"hpp-0"}});_HWIO.extra_assets=_HWIO.assign(_HWIO.extra_assets,{"eb5c6e00e25568dc2b74d269c1ac19f9":{"t":"js","l":"https:\/\/www.googletagmanager.com\/gtag\/js?id=G-6TKPML8K26","extra":1,"async":""}});
+/* ]]> */</script>
+</body>
+</html>
