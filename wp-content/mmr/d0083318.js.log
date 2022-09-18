@@ -1,0 +1,10 @@
+2022-09-16T10:06:23+00:00 - MERGED:
+ - jquery-core - /wp-includes/js/jquery/jquery.min.js
+ - jquery-migrate - /wp-includes/js/jquery/jquery-migrate.min.js
+ - hoverIntent - /wp-includes/js/hoverIntent.min.js
+
+ - contact-form-7 - https://learn-wordpress.tk/wp-content/plugins/contact-form-7/includes/js/scripts.js
+ - toc-front - https://learn-wordpress.tk/wp-content/plugins/table-of-contents-plus/front.min.js
+ - flatsome-live-search - https://learn-wordpress.tk/wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js
+ - flatsome-js - https://learn-wordpress.tk/wp-content/themes/flatsome/assets/js/flatsome.js
+ - flatsome-lazy - https://learn-wordpress.tk/wp-content/themes/flatsome/inc/extensions/flatsome-lazy-load/flatsome-lazy-load.js

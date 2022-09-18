@@ -1,0 +1,4 @@
+2022-09-17T01:20:59+00:00 - MERGED:
+ - jquery-core - /wp-includes/js/jquery/jquery.min.js
+ - jquery-migrate - /wp-includes/js/jquery/jquery-migrate.min.js
+ - hoverIntent - /wp-includes/js/hoverIntent.min.js

@@ -1,0 +1,10 @@
+2022-09-16T10:06:23+00:00 - MERGED:
+ - wp-block-library - /wp-includes/css/dist/block-library/style.min.css
+ - contact-form-7 - https://learn-wordpress.tk/wp-content/plugins/contact-form-7/includes/css/styles.css
+ - font-awesome-four - https://learn-wordpress.tk/wp-content/plugins/font-awesome-4-menus/css/font-awesome.min.css
+ - toc-screen - https://learn-wordpress.tk/wp-content/plugins/table-of-contents-plus/screen.min.css
+ - dashicons - /wp-includes/css/dashicons.min.css
+ - flatsome-icons - https://learn-wordpress.tk/wp-content/themes/flatsome/assets/css/fl-icons.css
+ - flatsome-main - https://learn-wordpress.tk/wp-content/themes/flatsome/assets/css/flatsome.css
+ - flatsome-style - https://learn-wordpress.tk/wp-content/themes/web-khoi-nghiep/style.css
+ - hpp-style - https://learn-wordpress.tk/wp-content/plugins/wp2speed/lib/asset/style.css
